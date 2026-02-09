@@ -6,7 +6,7 @@
   "scripts": {
     "build:css": "npx tailwindcss -i src/css/main.css -o _site/css/main.css --minify",
     "build:11ty": "npx eleventy",
-    "build": "npm run build:css && npm run build:11ty",
+    "build": "npm run build:11ty && npm run build:css",
     "watch:css": "npx tailwindcss -i src/css/main.css -o _site/css/main.css --watch",
     "watch:11ty": "npx eleventy --serve",
     "dev": "npm run watch:css & npm run watch:11ty"
