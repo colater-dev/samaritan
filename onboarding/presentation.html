@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Samaritan Bio — Website Strategy</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <!-- Core Stylesheet (shared with the project) -->
+  <link rel="stylesheet" href="../styles.css">
+
+  <style>
+    /* Presentation-specific overrides */
+    body {
+      padding-bottom: 0 !important;
+      background: var(--white);
+    }
+
+    /* ── Section System ── */
+    .pres-section {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 80px 32px;
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .pres-section:last-of-type {
+      border-bottom: none;
+    }
+
+    .pres-section-full {
+      max-width: 100%;
+      padding: 80px 0;
+    }
+
+    .pres-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* ── Cover Section ── */
+    .cover {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 80px 32px;
+      background: var(--navy-800);
+      color: white;
+      border-bottom: none;
+    }
+
+    .cover-studio {
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: var(--text-sm);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.5);
+      margin-bottom: 48px;
+    }
+
+    .cover h1 {
+      color: white;
+      font-size: var(--text-5xl);
+      font-weight: 600;
+      margin-bottom: 16px;
+      max-width: 700px;
+    }
+
+    .cover-subtitle {
+      font-family: var(--font-body);
+      font-size: var(--text-xl);
+      color: rgba(255, 255, 255, 0.6);
+      max-width: 560px;
+      line-height: 1.5;
+      margin-bottom: 48px;
+    }
+
+    .cover-meta {
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      color: rgba(255, 255, 255, 0.35);
+    }
+
+    /* ── Eyebrow + Section Headers ── */
+    .pres-eyebrow {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: var(--text-xs);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--navy-500);
+      margin-bottom: 12px;
+    }
+
+    .pres-section h2 {
+      font-size: var(--text-3xl);
+      margin-bottom: 8px;
+    }
+
+    .pres-lead {
+      font-family: var(--font-body);
+      font-size: var(--text-lg);
+      color: var(--gray-500);
+      line-height: 1.6;
+      margin-bottom: 40px;
+      max-width: 640px;
+    }
+
+    /* ── Stat Cards ── */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+
+    .stat-card {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--rounded-xl);
+      padding: 32px 24px;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 48px;
+      color: var(--navy-800);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat-label {
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      color: var(--gray-600);
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    .stat-source {
+      font-size: var(--text-xs);
+      color: var(--gray-400);
+      margin-top: 4px;
+    }
+
+    /* ── Understanding Card ── */
+    .understanding-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+
+    .understanding-card {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--rounded-xl);
+      padding: 28px;
+    }
+
+    .understanding-card h4 {
+      font-size: var(--text-base);
+      margin-bottom: 12px;
+      color: var(--navy-800);
+    }
+
+    .understanding-card p,
+    .understanding-card li {
+      font-size: var(--text-sm);
+      color: var(--gray-600);
+      margin-bottom: 6px;
+    }
+
+    .understanding-card ul {
+      padding-left: 16px;
+      margin: 0;
+    }
+
+    /* ── Competitor Table ── */
+    .comp-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: var(--text-sm);
+      margin-bottom: 32px;
+    }
+
+    .comp-table th {
+      text-align: left;
+      padding: 14px 16px;
+      background: var(--navy-800);
+      color: white;
+      font-weight: 600;
+      font-size: var(--text-xs);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .comp-table th:first-child {
+      border-radius: var(--rounded-lg) 0 0 0;
+    }
+
+    .comp-table th:last-child {
+      border-radius: 0 var(--rounded-lg) 0 0;
+    }
+
+    .comp-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--gray-200);
+      color: var(--gray-700);
+      vertical-align: top;
+    }
+
+    .comp-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .comp-table tr:nth-child(even) td {
+      background: var(--gray-50);
+    }
+
+    .comp-name {
+      font-weight: 600;
+      color: var(--gray-900);
+    }
+
+    .comp-badge {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 100px;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .comp-badge-high {
+      background: #FEE2E2;
+      color: #991B1B;
+    }
+
+    .comp-badge-medium {
+      background: #FEF3C7;
+      color: #92400E;
+    }
+
+    .comp-badge-low {
+      background: #D1FAE5;
+      color: #065F46;
+    }
+
+    /* ── Differentiator Strip ── */
+    .diff-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .diff-card {
+      background: var(--navy-800);
+      border-radius: var(--rounded-xl);
+      padding: 28px;
+      color: white;
+    }
+
+    .diff-card .diff-icon {
+      font-size: 28px;
+      margin-bottom: 12px;
+      opacity: 0.7;
+    }
+
+    .diff-card h4 {
+      color: white;
+      font-size: var(--text-base);
+      margin-bottom: 8px;
+    }
+
+    .diff-card p {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: var(--text-sm);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* ── Reference Sites ── */
+    .ref-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+
+    .ref-card {
+      border: 1px solid var(--gray-200);
+      border-radius: var(--rounded-xl);
+      overflow: hidden;
+      transition: box-shadow 0.2s ease;
+    }
+
+    .ref-card:hover {
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    }
+
+    .ref-card-img {
+      height: 220px;
+      background: var(--gray-100);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: var(--text-xl);
+      color: var(--gray-400);
+      letter-spacing: 0.02em;
+      overflow: hidden;
+    }
+
+    .ref-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    .ref-card-body {
+      padding: 20px;
+    }
+
+    .ref-card-body h4 {
+      font-size: var(--text-base);
+      margin-bottom: 4px;
+    }
+
+    .ref-card-body .ref-url {
+      font-size: var(--text-xs);
+      color: var(--navy-500);
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .ref-card-body p {
+      font-size: var(--text-sm);
+      color: var(--gray-600);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .ref-card-featured {
+      grid-column: 1 / -1;
+    }
+
+    .ref-card-featured .ref-card-img {
+      height: 260px;
+      background: var(--gray-50);
+    }
+
+    /* ── Page Structure ── */
+    .structure-list {
+      counter-reset: structure;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .structure-item {
+      counter-increment: structure;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .structure-item:last-child {
+      border-bottom: none;
+    }
+
+    .structure-num {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      background: var(--navy-800);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: var(--text-sm);
+    }
+
+    .structure-content h4 {
+      font-size: var(--text-base);
+      margin-bottom: 4px;
+    }
+
+    .structure-content p {
+      font-size: var(--text-sm);
+      color: var(--gray-500);
+      margin: 0;
+    }
+
+    /* ── Questions Section ── */
+    .questions-group {
+      margin-bottom: 40px;
+    }
+
+    .questions-group h3 {
+      font-size: var(--text-xl);
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--navy-800);
+      display: inline-block;
+    }
+
+    .questions-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .questions-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--gray-100);
+      font-size: var(--text-base);
+      color: var(--gray-700);
+    }
+
+    .questions-list li:last-child {
+      border-bottom: none;
+    }
+
+    .questions-list li i {
+      color: var(--navy-500);
+      font-size: 20px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* ── Assets Checklist ── */
+    .assets-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .asset-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px;
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--rounded-lg);
+    }
+
+    .asset-item i {
+      font-size: 24px;
+      color: var(--navy-600);
+      flex-shrink: 0;
+    }
+
+    .asset-item span {
+      font-size: var(--text-sm);
+      color: var(--gray-700);
+      font-weight: 500;
+    }
+
+    /* ── Next Steps ── */
+    .next-steps-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .next-step {
+      display: flex;
+      gap: 20px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .next-step:last-child {
+      border-bottom: none;
+    }
+
+    .next-step-num {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      background: var(--navy-50);
+      color: var(--navy-800);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: var(--text-sm);
+    }
+
+    .next-step-content h4 {
+      font-size: var(--text-base);
+      margin-bottom: 4px;
+    }
+
+    .next-step-content p {
+      font-size: var(--text-sm);
+      color: var(--gray-500);
+      margin: 0;
+    }
+
+    /* ── Footer ── */
+    .pres-footer {
+      text-align: center;
+      padding: 48px 32px;
+      background: var(--gray-50);
+      border-top: 1px solid var(--gray-200);
+    }
+
+    .pres-footer p {
+      font-size: var(--text-sm);
+      color: var(--gray-400);
+      margin: 0;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 767px) {
+      .pres-section {
+        padding: 48px 20px;
+      }
+
+      .cover h1 {
+        font-size: var(--text-3xl);
+      }
+
+      .stat-grid,
+      .diff-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .understanding-grid,
+      .ref-grid,
+      .assets-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .comp-table {
+        font-size: 12px;
+      }
+
+      .comp-table td,
+      .comp-table th {
+        padding: 10px 8px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- COVER -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <section class="cover">
+    <div class="cover-studio">Public Knowledge Studio</div>
+    <h1>Samaritan Bio</h1>
+    <p class="cover-subtitle">Website Strategy — Post-Discovery</p>
+    <p class="cover-meta">February 2025</p>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- 01 — WHAT WE KNOW -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <section class="pres-section">
+    <div class="pres-eyebrow">01 — What We Know</div>
+    <h2>Your Company at a Glance</h2>
+    <p class="pres-lead">We researched Samaritan Bio before the call and updated our understanding with what you shared. Here's the picture.</p>
+
+    <div class="understanding-grid">
+      <div class="understanding-card">
+        <h4><i class="ph-fill ph-buildings" style="margin-right: 8px;"></i> Company</h4>
+        <ul>
+          <li>M/S Samaritan AI Private Limited</li>
+          <li>Incorporated Sep 2019, Bangalore</li>
+          <li>Operating from NROG, Jakkur, Bengaluru</li>
+          <li>Co-founders: Karan Rao & Raghav Gopal Behl</li>
+        </ul>
+      </div>
+      <div class="understanding-card">
+        <h4><i class="ph-fill ph-package" style="margin-right: 8px;"></i> Product: AroBag</h4>
+        <ul>
+          <li>Smart urine monitoring bag for catheterized patients</li>
+          <li>AI-powered AKI/CKD predictive alerts</li>
+          <li>Companion app with computer vision</li>
+          <li>EMR integration capability</li>
+          <li>Patent pending, pre-clinical trials</li>
+          <li>3D renders and mockups available</li>
+        </ul>
+      </div>
+      <div class="understanding-card">
+        <h4><i class="ph-fill ph-users-three" style="margin-right: 8px;"></i> Target Audiences</h4>
+        <ul>
+          <li><strong>Investors & VCs</strong> — primary audience</li>
+          <li>Potential hires — talent recruitment</li>
+          <li>ICU clinicians & nurses (end users)</li>
+          <li>Hospital administrators (buyers)</li>
+        </ul>
+      </div>
+      <div class="understanding-card">
+        <h4><i class="ph-fill ph-globe" style="margin-right: 8px;"></i> Online Presence</h4>
+        <ul>
+          <li>samaritan.bio — basic single-page site</li>
+          <li>"AroBag" returns zero Google results</li>
+          <li>No press coverage or publications found</li>
+          <li>This website will be the primary first impression</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- 02 — THE VISION -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <section class="pres-section">
+    <div class="pres-eyebrow">02 — The Vision</div>
+    <h2>Not Just a Bag — A Foundational Model for the Human Body</h2>
+    <p class="pres-lead">The website needs to tell the bigger story. AroBag is the entry point, not the ceiling.</p>
+
+    <div class="understanding-grid" style="margin-bottom: 40px;">
+      <div class="understanding-card" style="background: var(--navy-800); border-color: var(--navy-800);">
+        <h4 style="color: white;"><i class="ph-fill ph-target" style="margin-right: 8px;"></i> The Immediate Product</h4>
+        <p style="color: rgba(255,255,255,0.7); font-size: var(--text-base); line-height: 1.6; margin: 0;">AroBag: smart urine monitoring for catheterized ICU patients. Continuous AI-powered AKI/CKD prediction. Affordable. Workflow-integrated.</p>
+      </div>
+      <div class="understanding-card" style="background: var(--navy-900); border-color: var(--navy-900);">
+        <h4 style="color: white;"><i class="ph-fill ph-rocket-launch" style="margin-right: 8px;"></i> The Grander Vision</h4>
+        <p style="color: rgba(255,255,255,0.7); font-size: var(--text-base); line-height: 1.6; margin: 0;">Building a foundational model for the human body. Urine is the most readily available biomarker. Catheterized patients are the first data source. This is where it starts.</p>
+      </div>
+    </div>
+
+    <h3>Why This Framing Matters</h3>
+    <div class="stat-grid" style="margin-top: 20px;">
+      <div class="stat-card">
+        <div class="stat-number">20–50%</div>
+        <p class="stat-label">of ICU patients develop Acute Kidney Injury</p>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">50%+</div>
+        <p class="stat-label">mortality rate in severe AKI cases</p>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">99%</div>
+        <p class="stat-label">of the market is still uncaptured — no affordable comprehensive solution exists</p>
+      </div>
+    </div>
+
+    <p style="font-size: var(--text-sm); color: var(--gray-500); max-width: 640px; line-height: 1.6; margin-top: 24px;">
+      The "AroBag replacement story" alone won't resonate with investors. The "foundational model" narrative positions Samaritan Bio as an AI platform company — not just a medical device startup. This is the story the website leads with.
+    </p>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- 03 — COMPETITIVE LANDSCAPE -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <section class="pres-section">
+    <div class="pres-eyebrow">03 — Competitive Landscape</div>
+    <h2>$200M+ Invested, No One Has Cracked It</h2>
+    <p class="pres-lead">The market is nascent and well-funded. Here's who's in the space, what they've raised, and how AroBag compares.</p>
+
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th>Company</th>
+          <th>Approach</th>
+          <th>Funding</th>
+          <th>vs AroBag</th>
+          <th>Overlap</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="comp-name">Fize Medical</span><br><span style="font-size: 11px; color: var(--gray-400);">Israeli-founded, Jericho NY</span></td>
+          <td>FIZE kUO — real-time urine output sensor + AI fluid management</td>
+          <td><strong>$30M</strong><br><span style="font-size: 11px;">Series A, Jan 2025</span></td>
+          <td>Closest model — continuous urine + AI. Sensor-based, not bag-form. AroBag's CV app, cost, and vision are differentiators.</td>
+          <td><span class="comp-badge comp-badge-high">Highest</span></td>
+        </tr>
+        <tr>
+          <td><span class="comp-name">Retia Medical</span><br><span style="font-size: 11px; color: var(--gray-400);">Formerly Potrero Medical</span></td>
+          <td>Accuryn — smart catheter + hemodynamics + AI</td>
+          <td><strong>$76M</strong><br><span style="font-size: 11px;">Series B+C, FDA-cleared</span></td>
+          <td>Multi-parameter, more complex & expensive. Only active since ~2023. AroBag is focused & cost-effective.</td>
+          <td><span class="comp-badge comp-badge-high">High</span></td>
+        </tr>
+        <tr>
+          <td><span class="comp-name">RenalSense</span><br><span style="font-size: 11px; color: var(--gray-400);">Israeli, Medline distribution</span></td>
+          <td>Clarity RMS — automated urine flow sensor with bedside display</td>
+          <td><strong>$14M</strong><br><span style="font-size: 11px;">Series A, FDA + CE</span></td>
+          <td>Measurement only, no AI prediction. AroBag adds the predictive layer.</td>
+          <td><span class="comp-badge comp-badge-high">High</span></td>
+        </tr>
+        <tr>
+          <td><span class="comp-name">Prenosis</span><br><span style="font-size: 11px; color: var(--gray-400);">Formerly Dascena</span></td>
+          <td>Impressa — EMR-based multi-organ AI prediction</td>
+          <td><strong>$50M+</strong><br><span style="font-size: 11px;">+ $20M BARDA contract</span></td>
+          <td>Software-only, no hardware. AroBag is hardware + AI.</td>
+          <td><span class="comp-badge comp-badge-medium">Medium</span></td>
+        </tr>
+        <tr>
+          <td><span class="comp-name">NephroCheck</span><br><span style="font-size: 11px; color: var(--gray-400);">Astute / bioMerieux</span></td>
+          <td>Urine biomarker test (TIMP-2 & IGFBP7)</td>
+          <td>Acquired<br><span style="font-size: 11px;">by bioMerieux</span></td>
+          <td>Single point-in-time test. AroBag is continuous.</td>
+          <td><span class="comp-badge comp-badge-medium">Medium</span></td>
+        </tr>
+        <tr>
+          <td><span class="comp-name">BioPorto</span><br><span style="font-size: 11px; color: var(--gray-400);">Public, Nasdaq Copenhagen</span></td>
+          <td>ProNephro AKI (NGAL) urine biomarker test</td>
+          <td><strong>DKK 620M</strong><br><span style="font-size: 11px;">market cap</span></td>
+          <td>Point-in-time biomarker. Pediatric FDA, adult by 2027. AroBag is continuous.</td>
+          <td><span class="comp-badge comp-badge-medium">Medium</span></td>
+        </tr>
+        <tr>
+          <td><span class="comp-name">DeepMind</span><br><span style="font-size: 11px; color: var(--gray-400);">Google</span></td>
+          <td>EMR-based AKI prediction (Nature 2019)</td>
+          <td>N/A<br><span style="font-size: 11px;">Research only</span></td>
+          <td>Set the benchmark (AUC 0.921). Validates the AI approach AroBag is taking.</td>
+          <td><span class="comp-badge comp-badge-low">Benchmark</span></td>
+        </tr>
+        <tr>
+          <td><span class="comp-name">Sentinel Medical</span></td>
+          <td>Improved urine collection/monitoring hardware</td>
+          <td>Early<br><span style="font-size: 11px;">startup</span></td>
+          <td>Collection only, no AI.</td>
+          <td><span class="comp-badge comp-badge-low">Low</span></td>
+        </tr>
+        <tr>
+          <td><span class="comp-name">Nuwellis</span><br><span style="font-size: 11px; color: var(--gray-400);">Public</span></td>
+          <td>Aquadex — ultrafiltration therapy</td>
+          <td>Public<br><span style="font-size: 11px;">treatment device</span></td>
+          <td>Treatment, not prediction. Different care pathway.</td>
+          <td><span class="comp-badge comp-badge-low">Low</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 style="margin-top: 48px;">AroBag's Unique Position</h3>
+    <p class="pres-lead">No single competitor combines all three: bag-form hardware, predictive AI, and EMR integration — at an affordable price point.</p>
+
+    <div class="diff-grid">
+      <div class="diff-card">
+        <div class="diff-icon"><i class="ph-fill ph-cpu"></i></div>
+        <h4>Hardware + AI + EMR</h4>
+        <p>Complete system in one product. Most competitors offer only 1–2 of these.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon"><i class="ph-fill ph-eye"></i></div>
+        <h4>Computer Vision App</h4>
+        <p>Novel data capture approach. No competitor uses CV for urine measurement digitization.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon"><i class="ph-fill ph-chart-line-down"></i></div>
+        <h4>Cost Advantage</h4>
+        <p>Only affordable comprehensive solution. Competitors have raised $30–76M and still haven't cracked cost.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon"><i class="ph-fill ph-brain"></i></div>
+        <h4>Foundational Model Vision</h4>
+        <p>Not just a device — a platform for human body intelligence. Urine as most accessible biomarker.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon"><i class="ph-fill ph-arrows-merge"></i></div>
+        <h4>Workflow Integration</h4>
+        <p>Bag form factor fits existing ICU workflows. No new hardware paradigm to adopt.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon"><i class="ph-fill ph-timer"></i></div>
+        <h4>Continuous & Predictive</h4>
+        <p>Unlike point-in-time tests (NephroCheck, NGAL), AroBag monitors continuously and predicts ahead.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- 04 — WEBSITE STRATEGY -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <section class="pres-section">
+    <div class="pres-eyebrow">04 — Website Strategy</div>
+    <h2>Two Pages, Two Audiences</h2>
+    <p class="pres-lead">A two-page approach: vision-first for investors, product-first for clinicians. Both reinforce the same core story.</p>
+
+    <div class="understanding-grid" style="margin-bottom: 48px;">
+      <div class="understanding-card" style="border-left: 4px solid var(--navy-800);">
+        <h4><i class="ph-fill ph-rocket-launch" style="margin-right: 8px;"></i> Page 1: Landing Page</h4>
+        <p style="margin-bottom: 8px;"><strong>Audience:</strong> Investors, potential hires</p>
+        <ul>
+          <li>Vision-driven, futuristic positioning</li>
+          <li>"Building the foundational model for the human body"</li>
+          <li>Market size / opportunity</li>
+          <li>Team credibility</li>
+          <li>AroBag as first application</li>
+        </ul>
+      </div>
+      <div class="understanding-card" style="border-left: 4px solid var(--navy-500);">
+        <h4><i class="ph-fill ph-heartbeat" style="margin-right: 8px;"></i> Page 2: AroBag Product</h4>
+        <p style="margin-bottom: 8px;"><strong>Audience:</strong> Clinicians, hospital admins</p>
+        <ul>
+          <li>Clinical problem + solution</li>
+          <li>How it works (3-step flow)</li>
+          <li>Clinical evidence / publications</li>
+          <li>Cost calculator tool (planned)</li>
+          <li>Register interest for pilot</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Landing Page Structure</h3>
+    <p style="font-size: var(--text-sm); color: var(--gray-500); margin-bottom: 20px;">Investor-focused. Deck-like information hierarchy (inspired by Neuro-Sonic).</p>
+    <ol class="structure-list">
+      <li class="structure-item">
+        <div class="structure-num">1</div>
+        <div class="structure-content">
+          <h4>Hero — The Vision</h4>
+          <p>Bold statement: "Building the foundational model for the human body." Device render as visual anchor. CTAs: Book a Demo, Download White Paper</p>
+        </div>
+      </li>
+      <li class="structure-item">
+        <div class="structure-num">2</div>
+        <div class="structure-content">
+          <h4>The Problem</h4>
+          <p>AKI statistics as large numbers. 99% market uncaptured. Manual measurement as the status quo.</p>
+        </div>
+      </li>
+      <li class="structure-item">
+        <div class="structure-num">3</div>
+        <div class="structure-content">
+          <h4>The Platform</h4>
+          <p>Urine as the most accessible biomarker. AroBag as the first data source. Foundational model narrative.</p>
+        </div>
+      </li>
+      <li class="structure-item">
+        <div class="structure-num">4</div>
+        <div class="structure-content">
+          <h4>AroBag — First Application</h4>
+          <p>3-step workflow: Monitor → Detect → Alert. Device + AI + EMR. Links to product page for detail.</p>
+        </div>
+      </li>
+      <li class="structure-item">
+        <div class="structure-num">5</div>
+        <div class="structure-content">
+          <h4>Market & Competitive Edge</h4>
+          <p>$200M+ invested by competitors, none have cracked affordable continuous monitoring + AI.</p>
+        </div>
+      </li>
+      <li class="structure-item">
+        <div class="structure-num">6</div>
+        <div class="structure-content">
+          <h4>Team</h4>
+          <p>Founders with credibility signals, advisors, institutional affiliations.</p>
+        </div>
+      </li>
+      <li class="structure-item">
+        <div class="structure-num">7</div>
+        <div class="structure-content">
+          <h4>Contact / CTA</h4>
+          <p>Book demo, register interest for pilot, download white paper, careers.</p>
+        </div>
+      </li>
+    </ol>
+
+    <h3 style="margin-top: 48px;">AroBag Product Page Structure</h3>
+    <p style="font-size: var(--text-sm); color: var(--gray-500); margin-bottom: 20px;">Clinician-focused. Evidence-driven, practical.</p>
+    <ol class="structure-list">
+      <li class="structure-item">
+        <div class="structure-num">1</div>
+        <div class="structure-content">
+          <h4>Product Hero</h4>
+          <p>Device render with key specs. "Continuous AI-powered AKI prediction for catheterized patients."</p>
+        </div>
+      </li>
+      <li class="structure-item">
+        <div class="structure-num">2</div>
+        <div class="structure-content">
+          <h4>How It Works</h4>
+          <p>3-step visual: Bag → CV App → Predictive Alert. EMR integration flow.</p>
+        </div>
+      </li>
+      <li class="structure-item">
+        <div class="structure-num">3</div>
+        <div class="structure-content">
+          <h4>Clinical Evidence</h4>
+          <p>Publications, white paper download, education content (following Fize Medical's model).</p>
+        </div>
+      </li>
+      <li class="structure-item">
+        <div class="structure-num">4</div>
+        <div class="structure-content">
+          <h4>Cost Calculator</h4>
+          <p>"AroBag will save you money — find out how much." Interactive tool (planned).</p>
+        </div>
+      </li>
+      <li class="structure-item">
+        <div class="structure-num">5</div>
+        <div class="structure-content">
+          <h4>Register Interest</h4>
+          <p>Pre-clinical trials — can't pilot yet, but capture demand. "Be first when trials complete."</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- 05 — DESIGN DIRECTION -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <section class="pres-section">
+    <div class="pres-eyebrow">05 — Design Direction</div>
+    <h2>Reference Sites & Visual Strategy</h2>
+    <p class="pres-lead">Based on your feedback — here's what we're drawing from each reference, and what we're leaving behind.</p>
+
+    <div class="ref-grid">
+      <div class="ref-card ref-card-featured">
+        <div class="ref-card-img">
+          <img src="assets/neuro-sonic.png" alt="Neuro-Sonic website screenshot">
+        </div>
+        <div class="ref-card-body">
+          <h4>Neuro-Sonic <span style="font-size: var(--text-xs); color: #059669; font-weight: 600; margin-left: 8px;">PRIMARY REFERENCE</span></h4>
+          <span class="ref-url">neuro-sonic.com — Public Knowledge Studio portfolio</span>
+          <p>Your strongest positive reaction. Feels "more like a deck" than a dense site — always one clear piece of information at a time. Balances speaking to end users and investors simultaneously. Animations and visuals make you imagine the product before you've even finished reading. Same constraints apply: medical device, limits on what can be said publicly. This is the structural and tonal model for Samaritan.</p>
+        </div>
+      </div>
+      <div class="ref-card ref-card-featured">
+        <div class="ref-card-img">
+          <img src="assets/fize.png" alt="Fize Medical website screenshot">
+        </div>
+        <div class="ref-card-body">
+          <h4>Fize Medical <span style="font-size: var(--text-xs); color: #059669; font-weight: 600; margin-left: 8px;">COLOR + CONTENT MODEL</span></h4>
+          <span class="ref-url">fizemedical.com — $30M Series A, biggest competitor</span>
+          <p>Called "super cool" — the neon accent against blue/white gives a startup edge while staying medical. Treads the line between clinical credibility and modern energy. Their literature review and clinical education layout for white papers is a specific reference for our publications section. We'll borrow the color logic (medical base + bold accent) while differentiating on palette.</p>
+        </div>
+      </div>
+      <div class="ref-card">
+        <div class="ref-card-img">
+          <img src="assets/viz-ai.png" alt="Viz.ai website screenshot">
+        </div>
+        <div class="ref-card-body">
+          <h4>Viz.ai <span style="font-size: var(--text-xs); color: var(--navy-500); font-weight: 600; margin-left: 8px;">POSITIONING REF</span></h4>
+          <span class="ref-url">viz.ai — AI clinical decision support</span>
+          <p>Thematic reference, not a design one. Same positioning model — AI detects condition, alerts clinician to act early. Validates the narrative structure: problem → AI detection → clinical action → outcomes. Useful for how we frame AroBag's story, not how we style the page.</p>
+        </div>
+      </div>
+      <div class="ref-card">
+        <div class="ref-card-img">
+          <img src="assets/butterfly-network.png" alt="Butterfly Network website screenshot">
+        </div>
+        <div class="ref-card-body">
+          <h4>Butterfly Network <span style="font-size: var(--text-xs); color: var(--navy-500); font-weight: 600; margin-left: 8px;">PRODUCT PAGE REF</span></h4>
+          <span class="ref-url">butterflynetwork.com — Handheld ultrasound + AI</span>
+          <p>Hardware + AI sold to hospitals. Device-as-hero approach makes medical equipment feel desirable. Reference for how we photograph and present AroBag on the product page.</p>
+        </div>
+      </div>
+      <div class="ref-card">
+        <div class="ref-card-img">
+          <img src="assets/outset.png" alt="Outset Medical website screenshot">
+        </div>
+        <div class="ref-card-body">
+          <h4>Outset Medical <span style="font-size: var(--text-xs); color: #D97706; font-weight: 600; margin-left: 8px;">USE WITH CAUTION</span></h4>
+          <span class="ref-url">outsetmedical.com — Dialysis system</span>
+          <p>Visually strong but flagged as "too much information" — requires too much reading to understand what they're doing. We'll draw from the renal care visual language and product photography, but avoid their information density. Neuro-Sonic's one-thing-at-a-time approach is the corrective.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- 06 — IP & DISCLOSURE NOTES -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <section class="pres-section">
+    <div class="pres-eyebrow">06 — IP Considerations</div>
+    <h2>What We Can and Can't Say</h2>
+    <p class="pres-lead">IP concerns limit public disclosure until clinical trials complete. The website must be compelling without revealing specifics that larger players could copy.</p>
+
+    <div class="understanding-grid">
+      <div class="understanding-card" style="border-left: 4px solid #059669; background: #F0FDF4;">
+        <h4 style="color: #065F46;"><i class="ph-fill ph-check-circle" style="margin-right: 8px;"></i> Safe to Communicate</h4>
+        <ul style="color: #065F46;">
+          <li>The problem (AKI statistics, manual measurement)</li>
+          <li>The vision (foundational model for human body)</li>
+          <li>The form factor (smart urine bag)</li>
+          <li>AI-powered prediction (general capability)</li>
+          <li>Cost advantage positioning</li>
+          <li>Team credentials and affiliations</li>
+          <li>"Patent pending" status</li>
+        </ul>
+      </div>
+      <div class="understanding-card" style="border-left: 4px solid #EF4444; background: #FEF2F2;">
+        <h4 style="color: #991B1B;"><i class="ph-fill ph-warning" style="margin-right: 8px;"></i> Avoid Until Trials Complete</h4>
+        <ul style="color: #991B1B;">
+          <li>Specific technical architecture details</li>
+          <li>Exact biomarker measurement methods</li>
+          <li>AI model specifics (architecture, training data)</li>
+          <li>Specific accuracy metrics (unless approved)</li>
+          <li>Detailed hardware specifications</li>
+          <li>Anything that could be reverse-engineered by Fize ($30M) or Retia ($76M)</li>
+        </ul>
+      </div>
+    </div>
+
+    <p style="font-size: var(--text-sm); color: var(--gray-500); max-width: 640px; line-height: 1.6; margin-top: 16px;">
+      This constraint actually helps the messaging: the landing page leads with vision and market opportunity (investor-friendly), while the product page stays at benefit-level language (clinician-friendly) without exposing technical IP.
+    </p>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- 07 — ASSETS WE NEED -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <section class="pres-section">
+    <div class="pres-eyebrow">07 — Assets Checklist</div>
+    <h2>What We Need to Get Started</h2>
+    <p class="pres-lead">Please share these at your earliest convenience. The sooner we have them, the faster we move.</p>
+
+    <div class="assets-grid">
+      <div class="asset-item">
+        <i class="ph-fill ph-image-square"></i>
+        <span>Logo files (.png shared, also share .svg if possible)</span>
+      </div>
+      <div class="asset-item">
+        <i class="ph-fill ph-cube"></i>
+        <span>3D renders / mockups of AroBag</span>
+      </div>
+      <div class="asset-item">
+        <i class="ph-fill ph-user-circle"></i>
+        <span>Founder headshots & bios</span>
+      </div>
+      <div class="asset-item">
+        <i class="ph-fill ph-presentation-chart"></i>
+        <span>Pitch deck (for messaging alignment)</span>
+      </div>
+      <div class="asset-item">
+        <i class="ph-fill ph-file-text"></i>
+        <span>White paper draft (when ready)</span>
+      </div>
+      <div class="asset-item">
+        <i class="ph-fill ph-shield-check"></i>
+        <span>Approved claims list (what we can say publicly)</span>
+      </div>
+      <div class="asset-item">
+        <i class="ph-fill ph-newspaper"></i>
+        <span>Any marketing materials (brochures, one-pagers)</span>
+      </div>
+      <div class="asset-item">
+        <i class="ph-fill ph-link"></i>
+        <span>Domain registrar login / DNS access</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- 08 — NEXT STEPS -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <section class="pres-section">
+    <div class="pres-eyebrow">08 — Next Steps</div>
+    <h2>What Happens Now</h2>
+    <p class="pres-lead">We move fast. Here's the plan.</p>
+
+    <ul class="next-steps-list">
+      <li class="next-step">
+        <div class="next-step-num">1</div>
+        <div class="next-step-content">
+          <h4>You Send Assets</h4>
+          <p>3D renders, logo, pitch deck, approved claims. Within 1–2 days.</p>
+        </div>
+      </li>
+      <li class="next-step">
+        <div class="next-step-num">2</div>
+        <div class="next-step-content">
+          <h4>We Build Both Pages</h4>
+          <p>Landing page (investor-focused vision) + AroBag product page (clinician-focused). Live preview link for your review.</p>
+        </div>
+      </li>
+      <li class="next-step">
+        <div class="next-step-num">3</div>
+        <div class="next-step-content">
+          <h4>IP Review & Iterate</h4>
+          <p>You flag anything that reveals too much. We refine copy, visuals, and layout. One focused feedback round.</p>
+        </div>
+      </li>
+      <li class="next-step">
+        <div class="next-step-num">4</div>
+        <div class="next-step-content">
+          <h4>Launch</h4>
+          <p>Deploy to your domain with GA4, Search Console, SEO/AEO optimization, and performance baked in.</p>
+        </div>
+      </li>
+      <li class="next-step">
+        <div class="next-step-num">5</div>
+        <div class="next-step-content">
+          <h4>Content Pipeline (Ongoing)</h4>
+          <p>White paper download, publications section, cost calculator tool, careers page — added as content becomes available.</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- FOOTER -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <div class="pres-footer">
+    <p>Public Knowledge Studio &middot; Prepared for Samaritan Bio &middot; February 2025</p>
+  </div>
+
+</body>
+
+</html>

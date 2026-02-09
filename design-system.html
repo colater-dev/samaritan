@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Samaritan Bio Design System</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* Design System Specific Styles */
+    body {
+      padding-bottom: 0 !important;
+    }
+
+    .ds-page {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 64px 32px;
+    }
+
+    .ds-header {
+      border-bottom: 2px solid var(--gray-200);
+      padding-bottom: 32px;
+      margin-bottom: 64px;
+    }
+
+    .ds-title {
+      font-size: 48px;
+      margin-bottom: 8px;
+    }
+
+    .ds-subtitle {
+      font-size: 18px;
+      color: var(--gray-600);
+      font-family: var(--font-body);
+      margin: 0;
+    }
+
+    .ds-section {
+      margin-bottom: 80px;
+    }
+
+    .ds-section-title {
+      font-size: 32px;
+      margin-bottom: 8px;
+      color: var(--gray-900);
+      font-family: var(--font-heading);
+    }
+
+    .ds-section-description {
+      font-size: 16px;
+      color: var(--gray-600);
+      margin-bottom: 32px;
+    }
+
+    .ds-grid {
+      display: grid;
+      gap: 24px;
+    }
+
+    .ds-grid-2 {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .ds-grid-3 {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .ds-card {
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--rounded-lg);
+      padding: 24px;
+    }
+
+    .ds-card-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: var(--gray-900);
+      font-family: var(--font-body);
+    }
+
+    .ds-color-swatch {
+      width: 100%;
+      height: 80px;
+      border-radius: var(--rounded);
+      margin-bottom: 12px;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .ds-color-info {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+
+    .ds-color-name {
+      font-weight: 600;
+      color: var(--gray-900);
+    }
+
+    .ds-color-value {
+      font-family: 'Monaco', monospace;
+      color: var(--gray-600);
+      font-size: 12px;
+    }
+
+    .ds-token-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    .ds-token-table th {
+      text-align: left;
+      padding: 12px;
+      background: var(--gray-50);
+      border-bottom: 2px solid var(--gray-200);
+      font-weight: 600;
+      color: var(--gray-900);
+    }
+
+    .ds-token-table td {
+      padding: 12px;
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .ds-token-name {
+      font-family: 'Monaco', monospace;
+      color: var(--navy-800);
+      font-size: 13px;
+    }
+
+    .ds-token-value {
+      font-family: 'Monaco', monospace;
+      color: var(--gray-600);
+      font-size: 13px;
+    }
+
+    .ds-typography-sample {
+      margin-bottom: 24px;
+    }
+
+    .ds-type-meta {
+      font-size: 12px;
+      color: var(--gray-600);
+      margin-top: 8px;
+      font-family: 'Monaco', monospace;
+    }
+
+    .ds-button-row {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .ds-component-preview {
+      background: var(--gray-50);
+      padding: 32px;
+      border-radius: var(--rounded-lg);
+      margin-bottom: 16px;
+    }
+
+    .ds-code-block {
+      background: #1F2937;
+      color: #E5E7EB;
+      padding: 16px;
+      border-radius: var(--rounded);
+      font-family: 'Monaco', monospace;
+      font-size: 13px;
+      overflow-x: auto;
+      margin-bottom: 16px;
+    }
+
+    .ds-spacing-box {
+      background: var(--navy-800);
+      color: white;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 600;
+      margin-right: 8px;
+      margin-bottom: 8px;
+    }
+
+    .ds-tailwind-notice {
+      background: #FEF3C7;
+      border: 1px solid #F59E0B;
+      border-radius: var(--rounded);
+      padding: 16px;
+      margin-bottom: 32px;
+    }
+
+    .ds-tailwind-notice-title {
+      font-weight: 600;
+      color: #92400E;
+      margin-bottom: 8px;
+      font-family: var(--font-body);
+      font-size: 14px;
+    }
+
+    .ds-tailwind-notice-text {
+      color: #92400E;
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .ds-deviation {
+      background: #FEE2E2;
+      border-left: 4px solid #EF4444;
+      padding: 12px 16px;
+      margin-top: 8px;
+      border-radius: 4px;
+    }
+
+    .ds-deviation-text {
+      color: #7F1D1D;
+      font-size: 13px;
+      margin: 0;
+    }
+
+    @media (max-width: 767px) {
+      .ds-page {
+        padding: 32px 16px;
+      }
+
+      .ds-title {
+        font-size: 32px;
+      }
+
+      .ds-section-title {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="ds-page">
+    <!-- Header -->
+    <div class="ds-header">
+      <h1 class="ds-title">Samaritan Bio Design System</h1>
+      <p class="ds-subtitle">Tailwind-aligned design tokens and components for medical device platforms</p>
+    </div>
+
+    <!-- Tailwind Alignment Notice -->
+    <div class="ds-tailwind-notice" style="background: #D1FAE5; border-color: #10B981;">
+      <div class="ds-tailwind-notice-title" style="color: #065F46;">✓ Tailwind CSS Aligned</div>
+      <p class="ds-tailwind-notice-text" style="color: #065F46;">
+        This design system is fully aligned with Tailwind CSS defaults for colors, typography, spacing, and border radius.
+        Use this as the single source of truth for your Figma designs and developer handoffs.
+      </p>
+    </div>
+
+    <!-- Colors -->
+    <section class="ds-section">
+      <h2 class="ds-section-title">Color Palette</h2>
+      <p class="ds-section-description">
+        Our color system uses Tailwind's naming convention. Custom brand colors supplement the standard Tailwind palette.
+      </p>
+
+      <h3 style="font-size: 20px; margin-bottom: 16px; margin-top: 32px;">Neutrals (Tailwind Gray Scale)</h3>
+      <p style="font-size: 14px; color: var(--gray-600); margin-bottom: 16px;">Complete gray palette matching Tailwind's default gray scale (50-950).</p>
+      <div class="ds-grid ds-grid-3">
+        <div class="ds-card"><div class="ds-color-swatch" style="background: #F9FAFB;"></div><div class="ds-color-info"><span class="ds-color-name">Gray 50</span><span class="ds-color-value">#F9FAFB</span></div><div class="ds-color-value">--gray-50</div><div style="margin-top: 8px; font-size: 12px; color: #059669;">✓ Matches Tailwind</div></div>
+        <div class="ds-card"><div class="ds-color-swatch" style="background: #F3F4F6;"></div><div class="ds-color-info"><span class="ds-color-name">Gray 100</span><span class="ds-color-value">#F3F4F6</span></div><div class="ds-color-value">--gray-100</div><div style="margin-top: 8px; font-size: 12px; color: #059669;">✓ Matches Tailwind</div></div>
+        <div class="ds-card"><div class="ds-color-swatch" style="background: #E5E7EB;"></div><div class="ds-color-info"><span class="ds-color-name">Gray 200</span><span class="ds-color-value">#E5E7EB</span></div><div class="ds-color-value">--gray-200</div><div style="margin-top: 8px; font-size: 12px; color: #059669;">✓ Matches Tailwind</div></div>
+        <div class="ds-card"><div class="ds-color-swatch" style="background: #D1D5DB;"></div><div class="ds-color-info"><span class="ds-color-name">Gray 300</span><span class="ds-color-value">#D1D5DB</span></div><div class="ds-color-value">--gray-300</div><div style="margin-top: 8px; font-size: 12px; color: #059669;">✓ Matches Tailwind</div></div>
+        <div class="ds-card"><div class="ds-color-swatch" style="background: #9CA3AF;"></div><div class="ds-color-info"><span class="ds-color-name">Gray 400</span><span class="ds-color-value">#9CA3AF</span></div><div class="ds-color-value">--gray-400</div><div style="margin-top: 8px; font-size: 12px; color: #059669;">✓ Matches Tailwind</div></div>
+        <div class="ds-card"><div class="ds-color-swatch" style="background: #6B7280;"></div><div class="ds-color-info"><span class="ds-color-name">Gray 500</span><span class="ds-color-value">#6B7280</span></div><div class="ds-color-value">--gray-500</div><div style="margin-top: 8px; font-size: 12px; color: #059669;">✓ Matches Tailwind</div></div>
+        <div class="ds-card"><div class="ds-color-swatch" style="background: #4B5563;"></div><div class="ds-color-info"><span class="ds-color-name">Gray 600</span><span class="ds-color-value">#4B5563</span></div><div class="ds-color-value">--gray-600</div><div style="margin-top: 8px; font-size: 12px; color: #059669;">✓ Matches Tailwind</div></div>
+        <div class="ds-card"><div class="ds-color-swatch" style="background: #374151;"></div><div class="ds-color-info"><span class="ds-color-name">Gray 700</span><span class="ds-color-value">#374151</span></div><div class="ds-color-value">--gray-700</div><div style="margin-top: 8px; font-size: 12px; color: #059669;">✓ Matches Tailwind</div></div>
+        <div class="ds-card"><div class="ds-color-swatch" style="background: #1F2937;"></div><div class="ds-color-info"><span class="ds-color-name">Gray 800</span><span class="ds-color-value">#1F2937</span></div><div class="ds-color-value">--gray-800</div><div style="margin-top: 8px; font-size: 12px; color: #059669;">✓ Matches Tailwind</div></div>
+        <div class="ds-card"><div class="ds-color-swatch" style="background: #111827;"></div><div class="ds-color-info"><span class="ds-color-name">Gray 900</span><span class="ds-color-value">#111827</span></div><div class="ds-color-value">--gray-900</div><div style="margin-top: 8px; font-size: 12px; color: #059669;">✓ Matches Tailwind</div></div>
+        <div class="ds-card"><div class="ds-color-swatch" style="background: #030712;"></div><div class="ds-color-info"><span class="ds-color-name">Gray 950</span><span class="ds-color-value">#030712</span></div><div class="ds-color-value">--gray-950</div><div style="margin-top: 8px; font-size: 12px; color: #059669;">✓ Matches Tailwind</div></div>
+      </div>
+
+      <h3 style="font-size: 20px; margin-bottom: 16px; margin-top: 48px;">Navy (Primary Brand)</h3>
+      <p style="font-size: 14px; color: var(--gray-600); margin-bottom: 16px;">Full color palette built from Samaritan Bio's primary brand color #1C1C40.</p>
+      <div class="ds-grid ds-grid-3">
+        <div class="ds-card"><div class="ds-color-swatch" style="background: #EDEDF5;"></div><div class="ds-color-info"><span class="ds-color-name">Navy 50</span><span class="ds-color-value">#EDEDF5</span></div><div class="ds-color-value">--navy-50</div></div>
+        <div class="ds-card"><div class="ds-color-swatch" style="background: #DCDCEC;"></div><div class="ds-color-info"><span class="ds-color-name">Navy 100</span><span class="ds-color-value">#DCDCEC</span></div><div class="ds-color-value">--navy-100</div></div>
+        <div class="ds-card"><div class="ds-color-swatch" style="background: #B8B8D9;"></div><div class="ds-color-info"><span class="ds-color-name">Navy 200</span><span class="ds-color-value">#B8B8D9</span></div><div class="ds-color-value">--navy-200</div></div>
+        <div class="ds-card"><div class="ds-color-swatch" style="background: #8E8EBF;"></div><div class="ds-color-info"><span class="ds-color-name">Navy 300</span><span class="ds-color-value">#8E8EBF</span></div><div class="ds-color-value">--navy-300</div></div>
+        <div class="ds-card"><div class="ds-color-swatch" style="background: #6868A5;"></div><div class="ds-color-info"><span class="ds-color-name">Navy 400</span><span class="ds-color-value">#6868A5</span></div><div class="ds-color-value">--navy-400</div></div>
+        <div class="ds-card"><div class="ds-color-swatch" style="background: #4A4A8A;"></div><div class="ds-color-info"><span class="ds-color-name">Navy 500</span><span class="ds-color-value">#4A4A8A</span></div><div class="ds-color-value">--navy-500</div></div>
+        <div class="ds-card"><div class="ds-color-swatch" style="background: #333370;"></div><div class="ds-color-info"><span class="ds-color-name">Navy 600</span><span class="ds-color-value">#333370</span></div><div class="ds-color-value">--navy-600</div></div>
+        <div class="ds-card"><div class="ds-color-swatch" style="background: #272758;"></div><div class="ds-color-info"><span class="ds-color-name">Navy 700</span><span class="ds-color-value">#272758</span></div><div class="ds-color-value">--navy-700</div></div>
+        <div class="ds-card"><div class="ds-color-swatch" style="background: #1C1C40; border: 2px solid #059669;"></div><div class="ds-color-info"><span class="ds-color-name">Navy 800 ⭐</span><span class="ds-color-value">#1C1C40</span></div><div class="ds-color-value">--navy-800</div><div style="margin-top: 8px; font-size: 12px; color: #059669; font-weight: 600;">Primary brand color</div></div>
+        <div class="ds-card"><div class="ds-color-swatch" style="background: #12122B;"></div><div class="ds-color-info"><span class="ds-color-name">Navy 900</span><span class="ds-color-value">#12122B</span></div><div class="ds-color-value">--navy-900</div></div>
+        <div class="ds-card"><div class="ds-color-swatch" style="background: #0A0A1A;"></div><div class="ds-color-info"><span class="ds-color-name">Navy 950</span><span class="ds-color-value">#0A0A1A</span></div><div class="ds-color-value">--navy-950</div></div>
+      </div>
+
+      <h3 style="font-size: 20px; margin-bottom: 16px; margin-top: 48px;">Brand Aliases</h3>
+      <p style="font-size: 14px; color: var(--gray-600); margin-bottom: 16px;">Semantic aliases that map to navy palette values for easy theming.</p>
+      <table class="ds-token-table">
+        <thead>
+          <tr>
+            <th>Token</th>
+            <th>Resolves To</th>
+            <th>Usage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="ds-token-name">--accent-primary</span></td>
+            <td><span class="ds-token-value">var(--navy-800) → #1C1C40</span></td>
+            <td>Primary brand accent, buttons, links</td>
+          </tr>
+          <tr>
+            <td><span class="ds-token-name">--accent-secondary</span></td>
+            <td><span class="ds-token-value">var(--navy-600) → #333370</span></td>
+            <td>Secondary accent, hover states, gradients</td>
+          </tr>
+          <tr>
+            <td><span class="ds-token-name">--ai-accent</span></td>
+            <td><span class="ds-token-value">var(--navy-600) → #333370</span></td>
+            <td>AI feature highlights</td>
+          </tr>
+          <tr>
+            <td><span class="ds-token-name">--ai-accent-dark</span></td>
+            <td><span class="ds-token-value">var(--navy-800) → #1C1C40</span></td>
+            <td>AI feature dark variant</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Typography -->
+    <section class="ds-section">
+      <h2 class="ds-section-title">Typography</h2>
+      <p class="ds-section-description">
+        Type scale follows Tailwind's default sizing. Work Sans is used for both headings and body text.
+      </p>
+
+      <h3 style="font-size: 20px; margin-bottom: 16px; margin-top: 32px;">Type Families</h3>
+      <table class="ds-token-table" style="margin-bottom: 32px;">
+        <thead>
+          <tr>
+            <th>Token</th>
+            <th>Value</th>
+            <th>Usage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="ds-token-name">--font-heading</span></td>
+            <td><span class="ds-token-value">'Work Sans', -apple-system, BlinkMacSystemFont, sans-serif</span></td>
+            <td>Headings (H1–H4)</td>
+          </tr>
+          <tr>
+            <td><span class="ds-token-name">--font-body</span></td>
+            <td><span class="ds-token-value">'Work Sans', -apple-system, BlinkMacSystemFont, sans-serif</span></td>
+            <td>Body text, UI elements</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="ds-deviation">
+        <p class="ds-deviation-text">⚠️ Custom typeface (Work Sans) instead of Tailwind defaults (Inter, system-ui)</p>
+      </div>
+
+      <h3 style="font-size: 20px; margin-bottom: 16px; margin-top: 48px;">Responsive Headings</h3>
+      <p style="font-size: 14px; color: var(--gray-600); margin-bottom: 16px;">All headings use Tailwind's responsive scale (mobile → desktop).</p>
+
+      <div class="ds-typography-sample">
+        <h1>Heading 1 - Predicting Kidney Injury Earlier</h1>
+        <div class="ds-type-meta">Font: Work Sans (Heading) • Mobile: 36px → Desktop: 48px • Weight: 500</div>
+        <div style="margin-top: 8px; font-size: 12px; color: #059669;">✓ Responsive: text-4xl (mobile) → text-5xl (desktop)</div>
+      </div>
+
+      <div class="ds-typography-sample">
+        <h2>Heading 2 - Smart Urine Monitoring for ICUs</h2>
+        <div class="ds-type-meta">Font: Work Sans (Heading) • Mobile: 30px → Desktop: 36px • Weight: 500</div>
+        <div style="margin-top: 8px; font-size: 12px; color: #059669;">✓ Responsive: text-3xl → text-4xl</div>
+      </div>
+
+      <div class="ds-typography-sample">
+        <h3>Heading 3 - AI-Powered Predictive Alerts</h3>
+        <div class="ds-type-meta">Font: Work Sans (Heading) • Mobile: 24px → Desktop: 30px • Weight: 500</div>
+        <div style="margin-top: 8px; font-size: 12px; color: #059669;">✓ Responsive: text-2xl → text-3xl</div>
+      </div>
+
+      <div class="ds-typography-sample">
+        <h4>Heading 4 - Clinical Evidence</h4>
+        <div class="ds-type-meta">Font: Work Sans (Heading) • Mobile: 20px → Desktop: 24px • Weight: 500</div>
+        <div style="margin-top: 8px; font-size: 12px; color: #059669;">✓ Responsive: text-xl → text-2xl</div>
+      </div>
+
+      <div class="ds-typography-sample">
+        <h5>Heading 5 - How It Works</h5>
+        <div class="ds-type-meta">Font: Work Sans (Body) • Mobile: 18px → Desktop: 20px • Weight: 600</div>
+        <div style="margin-top: 8px; font-size: 12px; color: #059669;">✓ Responsive: text-lg → text-xl</div>
+      </div>
+
+      <div class="ds-typography-sample">
+        <h6>Heading 6 - Component Title</h6>
+        <div class="ds-type-meta">Font: Work Sans (Body) • Mobile: 16px → Desktop: 18px • Weight: 600</div>
+        <div style="margin-top: 8px; font-size: 12px; color: #059669;">✓ Responsive: text-base → text-lg</div>
+      </div>
+
+      <div class="ds-typography-sample">
+        <p style="font-size: 16px;">Body Text - Acute Kidney Injury affects 20–50% of ICU patients and carries mortality rates exceeding 50% in severe cases. AroBag provides continuous, AI-powered monitoring to detect AKI hours before traditional methods, enabling earlier clinical intervention.</p>
+        <div class="ds-type-meta">Font: Work Sans (Body) • Size: 16px • Weight: 400</div>
+        <div style="margin-top: 8px; font-size: 12px; color: #059669;">✓ text-base (16px)</div>
+      </div>
+
+      <h3 style="font-size: 20px; margin-bottom: 16px; margin-top: 48px;">Font Size Tokens</h3>
+      <table class="ds-token-table">
+        <thead>
+          <tr>
+            <th>Token</th>
+            <th>Value</th>
+            <th>Tailwind Equivalent</th>
+            <th>Alignment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="ds-token-name">--text-xs</span></td>
+            <td><span class="ds-token-value">12px</span></td>
+            <td>text-xs (12px)</td>
+            <td style="color: #059669;">✓ Match</td>
+          </tr>
+          <tr>
+            <td><span class="ds-token-name">--text-sm</span></td>
+            <td><span class="ds-token-value">14px</span></td>
+            <td>text-sm (14px)</td>
+            <td style="color: #059669;">✓ Match</td>
+          </tr>
+          <tr>
+            <td><span class="ds-token-name">--text-base</span></td>
+            <td><span class="ds-token-value">16px</span></td>
+            <td>text-base (16px)</td>
+            <td style="color: #059669;">✓ Match</td>
+          </tr>
+          <tr>
+            <td><span class="ds-token-name">--text-lg</span></td>
+            <td><span class="ds-token-value">18px</span></td>
+            <td>text-lg (18px)</td>
+            <td style="color: #059669;">✓ Match</td>
+          </tr>
+          <tr>
+            <td><span class="ds-token-name">--text-xl</span></td>
+            <td><span class="ds-token-value">20px</span></td>
+            <td>text-xl (20px)</td>
+            <td style="color: #059669;">✓ Match</td>
+          </tr>
+          <tr>
+            <td><span class="ds-token-name">--text-2xl</span></td>
+            <td><span class="ds-token-value">24px</span></td>
+            <td>text-2xl (24px)</td>
+            <td style="color: #059669;">✓ Match</td>
+          </tr>
+          <tr>
+            <td><span class="ds-token-name">--text-3xl</span></td>
+            <td><span class="ds-token-value">30px</span></td>
+            <td>text-3xl (30px)</td>
+            <td style="color: #059669;">✓ Match</td>
+          </tr>
+          <tr>
+            <td><span class="ds-token-name">--text-4xl</span></td>
+            <td><span class="ds-token-value">36px</span></td>
+            <td>text-4xl (36px)</td>
+            <td style="color: #059669;">✓ Match</td>
+          </tr>
+          <tr>
+            <td><span class="ds-token-name">--text-5xl</span></td>
+            <td><span class="ds-token-value">48px</span></td>
+            <td>text-5xl (48px)</td>
+            <td style="color: #059669;">✓ Match</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Spacing -->
+    <section class="ds-section">
+      <h2 class="ds-section-title">Spacing Scale</h2>
+      <p class="ds-section-description">
+        Spacing follows Tailwind's 4px base unit system. Some custom values supplement the standard scale.
+      </p>
+
+      <div style="margin-bottom: 24px;">
+        <div class="ds-spacing-box" style="width: 4px; height: 40px;">1</div>
+        <div class="ds-spacing-box" style="width: 8px; height: 40px;">2</div>
+        <div class="ds-spacing-box" style="width: 16px; height: 40px;">4</div>
+        <div class="ds-spacing-box" style="width: 24px; height: 40px;">6</div>
+        <div class="ds-spacing-box" style="width: 32px; height: 40px;">8</div>
+        <div class="ds-spacing-box" style="width: 48px; height: 40px;">12</div>
+        <div class="ds-spacing-box" style="width: 64px; height: 40px;">16</div>
+        <div class="ds-spacing-box" style="width: 80px; height: 40px;">20</div>
+        <div class="ds-spacing-box" style="width: 120px; height: 40px;">30</div>
+      </div>
+
+      <table class="ds-token-table">
+        <thead>
+          <tr>
+            <th>Token</th>
+            <th>Value</th>
+            <th>Tailwind Equivalent</th>
+            <th>Alignment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="ds-token-name">--space-1</span></td>
+            <td><span class="ds-token-value">4px</span></td>
+            <td>space-1 (4px / 0.25rem)</td>
+            <td style="color: #059669;">✓ Match</td>
+          </tr>
+          <tr>
+            <td><span class="ds-token-name">--space-2</span></td>
+            <td><span class="ds-token-value">8px</span></td>
+            <td>space-2 (8px / 0.5rem)</td>
+            <td style="color: #059669;">✓ Match</td>
+          </tr>
+          <tr>
+            <td><span class="ds-token-name">--space-4</span></td>
+            <td><span class="ds-token-value">16px</span></td>
+            <td>space-4 (16px / 1rem)</td>
+            <td style="color: #059669;">✓ Match</td>
+          </tr>
+          <tr>
+            <td><span class="ds-token-name">--space-6</span></td>
+            <td><span class="ds-token-value">24px</span></td>
+            <td>space-6 (24px / 1.5rem)</td>
+            <td style="color: #059669;">✓ Match</td>
+          </tr>
+          <tr>
+            <td><span class="ds-token-name">--space-8</span></td>
+            <td><span class="ds-token-value">32px</span></td>
+            <td>space-8 (32px / 2rem)</td>
+            <td style="color: #059669;">✓ Match</td>
+          </tr>
+          <tr>
+            <td><span class="ds-token-name">--space-12</span></td>
+            <td><span class="ds-token-value">48px</span></td>
+            <td>space-12 (48px / 3rem)</td>
+            <td style="color: #059669;">✓ Match</td>
+          </tr>
+          <tr>
+            <td><span class="ds-token-name">--space-16</span></td>
+            <td><span class="ds-token-value">64px</span></td>
+            <td>space-16 (64px / 4rem)</td>
+            <td style="color: #059669;">✓ Match</td>
+          </tr>
+          <tr>
+            <td><span class="ds-token-name">--space-20</span></td>
+            <td><span class="ds-token-value">80px</span></td>
+            <td>space-20 (80px / 5rem)</td>
+            <td style="color: #059669;">✓ Match</td>
+          </tr>
+          <tr>
+            <td><span class="ds-token-name">--space-30</span></td>
+            <td><span class="ds-token-value">120px</span></td>
+            <td>Custom (Tailwind has space-32 at 128px)</td>
+            <td style="color: #EF4444;">⚠️ Custom value</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Border Radius -->
+    <section class="ds-section">
+      <h2 class="ds-section-title">Border Radius</h2>
+      <p class="ds-section-description">
+        Rounded corners use slightly larger values than Tailwind defaults for a softer appearance.
+      </p>
+
+      <div class="ds-grid ds-grid-3">
+        <div class="ds-card">
+          <div style="width: 100%; height: 80px; background: var(--navy-800); border-radius: 2px; margin-bottom: 12px;"></div>
+          <div class="ds-color-info">
+            <span class="ds-color-name">Small</span>
+            <span class="ds-color-value">2px</span>
+          </div>
+          <div class="ds-color-value">--rounded-sm</div>
+          <div style="margin-top: 8px; font-size: 12px; color: #059669;">✓ Matches Tailwind rounded-sm</div>
+        </div>
+
+        <div class="ds-card">
+          <div style="width: 100%; height: 80px; background: var(--navy-800); border-radius: 4px; margin-bottom: 12px;"></div>
+          <div class="ds-color-info">
+            <span class="ds-color-name">Default</span>
+            <span class="ds-color-value">4px</span>
+          </div>
+          <div class="ds-color-value">--rounded</div>
+          <div style="margin-top: 8px; font-size: 12px; color: #059669;">✓ Matches Tailwind rounded</div>
+        </div>
+
+        <div class="ds-card">
+          <div style="width: 100%; height: 80px; background: var(--navy-800); border-radius: 8px; margin-bottom: 12px;"></div>
+          <div class="ds-color-info">
+            <span class="ds-color-name">Large</span>
+            <span class="ds-color-value">8px</span>
+          </div>
+          <div class="ds-color-value">--rounded-lg</div>
+          <div style="margin-top: 8px; font-size: 12px; color: #059669;">✓ Matches Tailwind rounded-lg</div>
+        </div>
+
+        <div class="ds-card">
+          <div style="width: 100%; height: 80px; background: var(--navy-800); border-radius: 12px; margin-bottom: 12px;"></div>
+          <div class="ds-color-info">
+            <span class="ds-color-name">Extra Large</span>
+            <span class="ds-color-value">12px</span>
+          </div>
+          <div class="ds-color-value">--rounded-xl</div>
+          <div style="margin-top: 8px; font-size: 12px; color: #059669;">✓ Matches Tailwind rounded-xl</div>
+        </div>
+
+        <div class="ds-card">
+          <div style="width: 100%; height: 80px; background: var(--navy-800); border-radius: 16px; margin-bottom: 12px;"></div>
+          <div class="ds-color-info">
+            <span class="ds-color-name">2XL</span>
+            <span class="ds-color-value">16px</span>
+          </div>
+          <div class="ds-color-value">--rounded-2xl</div>
+          <div style="margin-top: 8px; font-size: 12px; color: #059669;">✓ Matches Tailwind rounded-2xl</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Buttons -->
+    <section class="ds-section">
+      <h2 class="ds-section-title">Buttons</h2>
+      <p class="ds-section-description">
+        Button components with gradients and multiple states for primary, secondary, ghost, and dark variants.
+      </p>
+
+      <div class="ds-component-preview">
+        <div class="ds-button-row">
+          <a href="#" class="button button-primary">Primary Button</a>
+          <a href="#" class="button button-secondary">Secondary Button</a>
+          <a href="#" class="button button-ghost">Ghost Button</a>
+          <a href="#" class="button button-primary-ai">Dark Button</a>
+        </div>
+      </div>
+
+      <div class="ds-code-block">&lt;a href="#" class="button button-primary"&gt;Primary Button&lt;/a&gt;
+&lt;a href="#" class="button button-secondary"&gt;Secondary Button&lt;/a&gt;
+&lt;a href="#" class="button button-ghost"&gt;Ghost Button&lt;/a&gt;
+&lt;a href="#" class="button button-primary-ai"&gt;Dark Button&lt;/a&gt;</div>
+
+      <table class="ds-token-table" style="margin-top: 24px;">
+        <thead>
+          <tr>
+            <th>Property</th>
+            <th>Value</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Padding</td>
+            <td>10px 20px</td>
+            <td>Custom values (Tailwind: py-2.5 px-5 = 10px 20px)</td>
+          </tr>
+          <tr>
+            <td>Border Radius</td>
+            <td>8px (--rounded-lg)</td>
+            <td>Matches Tailwind rounded-lg</td>
+          </tr>
+          <tr>
+            <td>Font Size</td>
+            <td>16px</td>
+            <td>Matches Tailwind text-base</td>
+          </tr>
+          <tr>
+            <td>Font Weight</td>
+            <td>500</td>
+            <td>Matches Tailwind font-medium</td>
+          </tr>
+          <tr>
+            <td>Background</td>
+            <td>Subtle top-to-bottom gradient</td>
+            <td>Linear gradients for depth</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 style="font-size: 18px; margin-bottom: 12px; margin-top: 32px;">Button Gradients</h3>
+      <table class="ds-token-table">
+        <thead>
+          <tr>
+            <th>Button Type</th>
+            <th>Gradient</th>
+            <th>Hover Gradient</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Primary</td>
+            <td>--navy-600 to --navy-700</td>
+            <td>--navy-700 to --navy-800</td>
+          </tr>
+          <tr>
+            <td>Secondary</td>
+            <td>--gray-50 to --gray-100</td>
+            <td>--gray-100 to --gray-200</td>
+          </tr>
+          <tr>
+            <td>Ghost</td>
+            <td>transparent</td>
+            <td>#f5f5f5 to #ececec</td>
+          </tr>
+          <tr>
+            <td>Dark</td>
+            <td>--gray-700 to --gray-900</td>
+            <td>--gray-800 to --gray-950 + inner shadow</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 style="font-size: 18px; margin-bottom: 12px; margin-top: 32px;">Buttons with Icons</h3>
+      <p style="font-size: 14px; color: var(--gray-600); margin-bottom: 16px;">Using Phosphor Icons for consistent iconography across all buttons.</p>
+
+      <div class="ds-component-preview">
+        <div class="ds-button-row">
+          <a href="#" class="button button-primary">
+            <i class="ph ph-calendar-check"></i>
+            Book a Demo
+          </a>
+          <a href="#" class="button button-primary">
+            <i class="ph ph-arrow-right"></i>
+            Get Started
+          </a>
+          <a href="#" class="button button-secondary">
+            <i class="ph ph-flask"></i>
+            Request Pilot
+          </a>
+          <a href="#" class="button button-secondary">
+            <i class="ph ph-info"></i>
+            Learn More
+          </a>
+        </div>
+        <div class="ds-button-row" style="margin-top: 16px;">
+          <a href="#" class="button button-ghost">
+            <i class="ph ph-play"></i>
+            Watch Demo
+          </a>
+          <a href="#" class="button button-ghost">
+            <i class="ph ph-file-text"></i>
+            Clinical Data
+          </a>
+          <a href="#" class="button button-primary-ai">
+            <i class="ph ph-sparkle"></i>
+            AI Predictions
+          </a>
+          <a href="#" class="button button-primary-ai">
+            <i class="ph ph-chart-line-up"></i>
+            View Analytics
+          </a>
+        </div>
+      </div>
+
+      <div class="ds-code-block">&lt;!-- Primary with icon --&gt;
+&lt;a href="#" class="button button-primary"&gt;
+  &lt;i class="ph ph-calendar-check"&gt;&lt;/i&gt;
+  Book a Demo
+&lt;/a&gt;
+
+&lt;!-- Secondary with icon --&gt;
+&lt;a href="#" class="button button-secondary"&gt;
+  &lt;i class="ph ph-flask"&gt;&lt;/i&gt;
+  Request Pilot
+&lt;/a&gt;
+
+&lt;!-- Ghost with icon --&gt;
+&lt;a href="#" class="button button-ghost"&gt;
+  &lt;i class="ph ph-play"&gt;&lt;/i&gt;
+  Watch Demo
+&lt;/a&gt;
+
+&lt;!-- Dark with icon --&gt;
+&lt;a href="#" class="button button-primary-ai"&gt;
+  &lt;i class="ph ph-sparkle"&gt;&lt;/i&gt;
+  AI Predictions
+&lt;/a&gt;</div>
+    </section>
+
+    <!-- Icons -->
+    <section class="ds-section">
+      <h2 class="ds-section-title">Icons</h2>
+      <p class="ds-section-description">
+        Using Phosphor Icons - a flexible icon family with multiple weights and styles.
+      </p>
+
+      <h3 style="font-size: 20px; margin-bottom: 16px; margin-top: 32px;">Installation</h3>
+      <div class="ds-code-block">&lt;!-- Add to &lt;head&gt; --&gt;
+&lt;script src="https://unpkg.com/@phosphor-icons/web"&gt;&lt;/script&gt;</div>
+
+      <h3 style="font-size: 20px; margin-bottom: 16px; margin-top: 32px;">Common Icons</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; margin-top: 16px;">
+        <div style="display: flex; align-items: center; gap: 12px; padding: 16px; background: var(--gray-50); border-radius: var(--rounded-lg);">
+          <i class="ph ph-heartbeat" style="font-size: 24px;"></i>
+          <div>
+            <div style="font-weight: 600; font-size: 14px;">Heartbeat</div>
+            <code style="font-size: 12px; color: var(--gray-600);">ph-heartbeat</code>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px; padding: 16px; background: var(--gray-50); border-radius: var(--rounded-lg);">
+          <i class="ph ph-chart-line-up" style="font-size: 24px;"></i>
+          <div>
+            <div style="font-weight: 600; font-size: 14px;">Chart Line Up</div>
+            <code style="font-size: 12px; color: var(--gray-600);">ph-chart-line-up</code>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px; padding: 16px; background: var(--gray-50); border-radius: var(--rounded-lg);">
+          <i class="ph ph-flask" style="font-size: 24px;"></i>
+          <div>
+            <div style="font-weight: 600; font-size: 14px;">Flask</div>
+            <code style="font-size: 12px; color: var(--gray-600);">ph-flask</code>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px; padding: 16px; background: var(--gray-50); border-radius: var(--rounded-lg);">
+          <i class="ph ph-sparkle" style="font-size: 24px;"></i>
+          <div>
+            <div style="font-weight: 600; font-size: 14px;">Sparkle (AI)</div>
+            <code style="font-size: 12px; color: var(--gray-600);">ph-sparkle</code>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px; padding: 16px; background: var(--gray-50); border-radius: var(--rounded-lg);">
+          <i class="ph ph-calendar-check" style="font-size: 24px;"></i>
+          <div>
+            <div style="font-weight: 600; font-size: 14px;">Calendar Check</div>
+            <code style="font-size: 12px; color: var(--gray-600);">ph-calendar-check</code>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px; padding: 16px; background: var(--gray-50); border-radius: var(--rounded-lg);">
+          <i class="ph ph-hospital" style="font-size: 24px;"></i>
+          <div>
+            <div style="font-weight: 600; font-size: 14px;">Hospital</div>
+            <code style="font-size: 12px; color: var(--gray-600);">ph-hospital</code>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px; padding: 16px; background: var(--gray-50); border-radius: var(--rounded-lg);">
+          <i class="ph ph-shield-check" style="font-size: 24px;"></i>
+          <div>
+            <div style="font-weight: 600; font-size: 14px;">Shield Check</div>
+            <code style="font-size: 12px; color: var(--gray-600);">ph-shield-check</code>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px; padding: 16px; background: var(--gray-50); border-radius: var(--rounded-lg);">
+          <i class="ph ph-arrow-right" style="font-size: 24px;"></i>
+          <div>
+            <div style="font-weight: 600; font-size: 14px;">Arrow Right</div>
+            <code style="font-size: 12px; color: var(--gray-600);">ph-arrow-right</code>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px; padding: 16px; background: var(--gray-50); border-radius: var(--rounded-lg);">
+          <i class="ph ph-check-circle" style="font-size: 24px;"></i>
+          <div>
+            <div style="font-weight: 600; font-size: 14px;">Check Circle</div>
+            <code style="font-size: 12px; color: var(--gray-600);">ph-check-circle</code>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px; padding: 16px; background: var(--gray-50); border-radius: var(--rounded-lg);">
+          <i class="ph ph-warning" style="font-size: 24px;"></i>
+          <div>
+            <div style="font-weight: 600; font-size: 14px;">Warning</div>
+            <code style="font-size: 12px; color: var(--gray-600);">ph-warning</code>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px; padding: 16px; background: var(--gray-50); border-radius: var(--rounded-lg);">
+          <i class="ph ph-play" style="font-size: 24px;"></i>
+          <div>
+            <div style="font-weight: 600; font-size: 14px;">Play</div>
+            <code style="font-size: 12px; color: var(--gray-600);">ph-play</code>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px; padding: 16px; background: var(--gray-50); border-radius: var(--rounded-lg);">
+          <i class="ph ph-file-text" style="font-size: 24px;"></i>
+          <div>
+            <div style="font-weight: 600; font-size: 14px;">File Text</div>
+            <code style="font-size: 12px; color: var(--gray-600);">ph-file-text</code>
+          </div>
+        </div>
+      </div>
+
+      <h3 style="font-size: 20px; margin-bottom: 16px; margin-top: 32px;">Usage</h3>
+      <div class="ds-code-block">&lt;!-- Regular icon --&gt;
+&lt;i class="ph ph-sparkle"&gt;&lt;/i&gt;
+
+&lt;!-- Bold icon --&gt;
+&lt;i class="ph-bold ph-sparkle"&gt;&lt;/i&gt;
+
+&lt;!-- Fill icon --&gt;
+&lt;i class="ph-fill ph-sparkle"&gt;&lt;/i&gt;
+
+&lt;!-- Duotone icon --&gt;
+&lt;i class="ph-duotone ph-sparkle"&gt;&lt;/i&gt;</div>
+
+      <div style="margin-top: 16px; padding: 16px; background: var(--gray-50); border-radius: var(--rounded-lg); border-left: 4px solid var(--navy-600);">
+        <p style="margin: 0; font-size: 14px; color: var(--gray-700);">
+          <strong>Resources:</strong> Browse all 6,000+ icons at
+          <a href="https://phosphoricons.com" target="_blank" style="color: var(--navy-800); text-decoration: underline;">phosphoricons.com</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Components -->
+    <section class="ds-section">
+      <h2 class="ds-section-title">Key Components</h2>
+      <p class="ds-section-description">
+        Reusable component patterns with consistent styling and behavior.
+      </p>
+
+      <h3 style="font-size: 20px; margin-bottom: 16px; margin-top: 32px;">Cards</h3>
+      <div class="ds-component-preview">
+        <div style="max-width: 400px;">
+          <div class="pricing-card">
+            <div class="pricing-header">
+              <div class="title text-accent">AroBag System</div>
+              <div class="pricing-plan-subtitle">Smart Urine Monitoring for ICU</div>
+            </div>
+            <div class="pricing-amount">Contact Us</div>
+            <div class="pricing-period">for pricing details</div>
+            <div class="pricing-buttons">
+              <a href="#" class="button button-primary">Book a Demo</a>
+              <a href="#" class="button button-secondary">Request Pilot</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3 style="font-size: 20px; margin-bottom: 16px; margin-top: 48px;">Feature Cards (AI)</h3>
+      <div class="ds-component-preview">
+        <div style="max-width: 400px;">
+          <div class="ai-feature-card">
+            <div class="ai-feature-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                <path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path>
+              </svg>
+            </div>
+            <h3 class="ai-feature-title">Predictive AKI Alerts</h3>
+            <p class="ai-feature-description">AI models analyze continuous urine output data to generate predictive alerts for Acute Kidney Injury hours before traditional detection methods.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Layout -->
+    <section class="ds-section">
+      <h2 class="ds-section-title">Layout & Grid</h2>
+      <p class="ds-section-description">
+        Container widths and grid patterns for consistent page layouts.
+      </p>
+
+      <table class="ds-token-table">
+        <thead>
+          <tr>
+            <th>Token</th>
+            <th>Value</th>
+            <th>Usage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="ds-token-name">--container-7xl</span></td>
+            <td><span class="ds-token-value">1280px</span></td>
+            <td>Maximum container width (Tailwind max-w-7xl: 1280px) ✓</td>
+          </tr>
+          <tr>
+            <td><span class="ds-token-name">--container-6xl</span></td>
+            <td><span class="ds-token-value">1152px</span></td>
+            <td>Narrower content areas (Tailwind max-w-6xl: 1152px) ✓</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Summary -->
+    <section class="ds-section">
+      <h2 class="ds-section-title">Tailwind Alignment Summary</h2>
+      <p class="ds-section-description">
+        This design system is now fully aligned with Tailwind CSS defaults.
+      </p>
+
+      <div class="ds-card" style="background: #D1FAE5; border-color: #10B981;">
+        <h3 style="font-size: 18px; margin-bottom: 16px; color: #065F46;">✓ Fully Aligned with Tailwind</h3>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+          <li style="padding: 8px 0; border-bottom: 1px solid #A7F3D0; color: #065F46;">
+            <strong>Typography Scale:</strong> All font sizes (xs through 9xl) match Tailwind exactly
+          </li>
+          <li style="padding: 8px 0; border-bottom: 1px solid #A7F3D0; color: #065F46;">
+            <strong>Gray Colors:</strong> Complete gray scale (50-950, all 11 shades) matches Tailwind defaults exactly
+          </li>
+          <li style="padding: 8px 0; border-bottom: 1px solid #A7F3D0; color: #065F46;">
+            <strong>Border Radius:</strong> All rounded values (sm, default, lg, xl, 2xl) match Tailwind
+          </li>
+          <li style="padding: 8px 0; border-bottom: 1px solid #A7F3D0; color: #065F46;">
+            <strong>Spacing Scale:</strong> All spacing tokens (1, 2, 4, 6, 8, 12, 16, 20) match Tailwind
+          </li>
+          <li style="padding: 8px 0; color: #065F46;">
+            <strong>Containers:</strong> Both 7xl (1280px) and 6xl (1152px) match Tailwind max-width values
+          </li>
+        </ul>
+      </div>
+
+      <div class="ds-card" style="background: #FEF3C7; border-color: #F59E0B; margin-top: 24px;">
+        <h3 style="font-size: 18px; margin-bottom: 16px; color: #92400E;">Custom Brand Elements</h3>
+        <p style="color: #92400E; font-size: 14px; margin-bottom: 12px;">
+          These custom values extend Tailwind without conflicting with defaults:
+        </p>
+        <ul style="list-style: none; padding: 0; margin: 0;">
+          <li style="padding: 8px 0; border-bottom: 1px solid #FDE68A; color: #92400E;">
+            <strong>Brand Colors:</strong> Navy 800 (#1C1C40) primary, Navy 600 (#333370) secondary — 11-shade navy palette
+          </li>
+          <li style="padding: 8px 0; border-bottom: 1px solid #FDE68A; color: #92400E;">
+            <strong>Typeface:</strong> Work Sans — used for both --font-heading and --font-body
+          </li>
+          <li style="padding: 8px 0; color: #92400E;">
+            <strong>Components:</strong> Button gradients, card styles, and feature cards — custom UI patterns
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </div>
+
+</body>
+
+</html>
