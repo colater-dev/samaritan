@@ -1,0 +1,1428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AroBag — AI-Powered Smart Urine Monitoring for ICU | Samaritan</title>
+  <meta name="description"
+    content="AroBag is a smart urine monitoring bag with AI-powered predictive alerts for Acute Kidney Injury (AKI) and Chronic Kidney Disease (CKD) detection in ICU patients.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/regular/style.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Product Page Specific Styles */
+
+    /* Navigation (shared with landing) */
+    .landing-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--space-4) var(--space-6);
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(12px);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      box-shadow: 0 1px 0 var(--shadow-sm);
+    }
+
+    .nav-brand {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: var(--text-xl);
+      color: var(--navy-800);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-brand span {
+      color: var(--teal-600);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: var(--space-1);
+      align-items: center;
+      padding: var(--space-1);
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(12px);
+      border-radius: var(--rounded);
+      box-shadow: 0px 0px 0px 1px var(--shadow-md);
+    }
+
+    .nav-links a {
+      padding: 6px 14px 8px;
+      border-radius: var(--rounded-sm);
+      color: var(--gray-500);
+      text-decoration: none;
+      font-size: var(--text-sm);
+      font-weight: 500;
+      transition: all var(--duration-200);
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--gray-900);
+      background: rgba(0, 0, 0, 0.03);
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 20px;
+      background: linear-gradient(to bottom, var(--navy-600), var(--navy-700));
+      color: var(--white) !important;
+      border-radius: var(--rounded-lg);
+      font-size: var(--text-sm);
+      font-weight: 500;
+      text-decoration: none;
+      transition: all var(--duration-200);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .nav-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.25);
+      pointer-events: none;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-1px);
+    }
+
+    /* Product Hero */
+    .product-hero {
+      padding: 160px 0 100px;
+      background: linear-gradient(180deg, var(--white) 0%, var(--gray-50) 100%);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-hero::before {
+      content: '';
+      position: absolute;
+      width: 1000px;
+      height: 600px;
+      left: 50%;
+      bottom: -200px;
+      transform: translateX(-50%);
+      background: radial-gradient(ellipse, rgba(13, 148, 136, 0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .product-hero > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .product-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      background: var(--teal-50);
+      border: 1px solid var(--teal-200);
+      border-radius: 100px;
+      font-size: var(--text-sm);
+      font-weight: 500;
+      color: var(--teal-700);
+      margin-bottom: var(--space-6);
+    }
+
+    .product-badge i {
+      font-size: 16px;
+    }
+
+    .product-hero h1 {
+      font-size: var(--text-5xl);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      max-width: 780px;
+      margin: 0 auto var(--space-6);
+    }
+
+    @media (min-width: 768px) {
+      .product-hero h1 {
+        font-size: var(--text-6xl);
+      }
+    }
+
+    .product-hero-lead {
+      font-size: var(--text-xl);
+      line-height: 1.5;
+      color: var(--gray-500);
+      max-width: 600px;
+      margin: 0 auto var(--space-8);
+    }
+
+    .product-hero-ctas {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Product Visual Placeholder */
+    .product-visual-section {
+      padding: 0 0 80px;
+      background: var(--gray-50);
+    }
+
+    .product-visual-container {
+      max-width: 960px;
+      margin: 0 auto;
+      aspect-ratio: 16/9;
+      background: linear-gradient(135deg, var(--navy-100) 0%, var(--navy-50) 50%, var(--teal-50) 100%);
+      border-radius: var(--rounded-xl);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-4);
+      box-shadow: inset 0px 0px 12px rgba(0, 0, 0, 0.08), 0 20px 60px rgba(0, 0, 0, 0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-visual-container::before {
+      content: '';
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      top: 20%;
+      left: 30%;
+      background: radial-gradient(circle, rgba(13, 148, 136, 0.1) 0%, transparent 70%);
+    }
+
+    .product-visual-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      color: var(--navy-600);
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .product-visual-label {
+      font-size: var(--text-sm);
+      font-weight: 500;
+      color: var(--navy-500);
+      position: relative;
+      z-index: 1;
+      padding: 8px 16px;
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 100px;
+      backdrop-filter: blur(8px);
+    }
+
+    /* System Overview Section */
+    .system-section {
+      padding: 120px 0;
+      background: var(--white);
+    }
+
+    .system-section h2 {
+      text-align: center;
+      margin-bottom: var(--space-4);
+    }
+
+    .system-section .section-description {
+      margin-bottom: var(--space-16);
+    }
+
+    .system-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-6);
+    }
+
+    .system-card {
+      padding: var(--space-8);
+      background: var(--gray-50);
+      border-radius: var(--rounded-lg);
+      border: 1px solid var(--gray-200);
+      transition: all var(--duration-300);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .system-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--teal-400), var(--navy-400));
+      opacity: 0;
+      transition: opacity var(--duration-300);
+    }
+
+    .system-card:hover {
+      border-color: var(--navy-200);
+      background: var(--white);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+      transform: translateY(-4px);
+    }
+
+    .system-card:hover::before {
+      opacity: 1;
+    }
+
+    .system-card-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: var(--rounded-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: var(--space-6);
+      font-size: 28px;
+    }
+
+    .system-card:nth-child(1) .system-card-icon {
+      background: linear-gradient(135deg, var(--teal-100), var(--teal-50));
+      color: var(--teal-700);
+    }
+
+    .system-card:nth-child(2) .system-card-icon {
+      background: linear-gradient(135deg, var(--navy-100), var(--navy-50));
+      color: var(--navy-700);
+    }
+
+    .system-card:nth-child(3) .system-card-icon {
+      background: linear-gradient(135deg, var(--teal-100), var(--teal-50));
+      color: var(--teal-700);
+    }
+
+    .system-card h3 {
+      margin-bottom: var(--space-2);
+    }
+
+    .system-card p {
+      font-size: var(--text-sm);
+      line-height: 1.6;
+      margin-bottom: var(--space-6);
+    }
+
+    .system-card-features {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .system-card-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 6px 0;
+      font-size: var(--text-sm);
+      color: var(--gray-700);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .system-card-features li i {
+      color: var(--teal-600);
+      font-size: 18px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* How It Works (Product Page) */
+    .hiw-product-section {
+      padding: 120px 0;
+      background: var(--navy-900);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hiw-product-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 70% 30%, rgba(13, 148, 136, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .hiw-product-section > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hiw-product-section h2 {
+      color: var(--white);
+      text-align: center;
+      margin-bottom: var(--space-4);
+    }
+
+    .hiw-product-section .section-description {
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: var(--space-16);
+    }
+
+    .hiw-timeline {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .hiw-timeline::before {
+      content: '';
+      position: absolute;
+      left: 32px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--teal-500), var(--navy-500), var(--teal-500));
+      opacity: 0.3;
+    }
+
+    .hiw-timeline-step {
+      display: flex;
+      gap: var(--space-8);
+      padding-bottom: var(--space-12);
+      position: relative;
+    }
+
+    .hiw-timeline-step:last-child {
+      padding-bottom: 0;
+    }
+
+    .hiw-timeline-marker {
+      flex-shrink: 0;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hiw-timeline-step:nth-child(odd) .hiw-timeline-marker {
+      background: linear-gradient(135deg, rgba(13, 148, 136, 0.2), rgba(13, 148, 136, 0.1));
+      color: var(--teal-400);
+      border: 2px solid rgba(13, 148, 136, 0.3);
+    }
+
+    .hiw-timeline-step:nth-child(even) .hiw-timeline-marker {
+      background: linear-gradient(135deg, rgba(74, 74, 138, 0.3), rgba(74, 74, 138, 0.15));
+      color: var(--navy-300);
+      border: 2px solid rgba(74, 74, 138, 0.3);
+    }
+
+    .hiw-timeline-content {
+      flex: 1;
+      padding-top: 8px;
+    }
+
+    .hiw-timeline-content h4 {
+      color: var(--white);
+      font-size: var(--text-xl);
+      margin-bottom: var(--space-2);
+    }
+
+    .hiw-timeline-content p {
+      color: rgba(255, 255, 255, 0.65);
+      font-size: var(--text-base);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .hiw-timeline-content .step-label {
+      font-size: var(--text-xs);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--teal-400);
+      margin-bottom: var(--space-1);
+      display: block;
+    }
+
+    /* Clinical Evidence Section */
+    .clinical-section {
+      padding: 120px 0;
+      background: var(--white);
+    }
+
+    .clinical-section h2 {
+      text-align: center;
+      margin-bottom: var(--space-4);
+    }
+
+    .clinical-section .section-description {
+      margin-bottom: var(--space-12);
+    }
+
+    .clinical-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-6);
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .clinical-card {
+      padding: var(--space-6);
+      background: var(--gray-50);
+      border-radius: var(--rounded-lg);
+      border: 1px solid var(--gray-200);
+      transition: all var(--duration-300);
+    }
+
+    .clinical-card:hover {
+      background: var(--white);
+      border-color: var(--navy-200);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      transform: translateY(-2px);
+    }
+
+    .clinical-card-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--rounded);
+      background: var(--navy-50);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: var(--space-4);
+      color: var(--navy-600);
+      font-size: 20px;
+    }
+
+    .clinical-card h4 {
+      margin-bottom: var(--space-2);
+    }
+
+    .clinical-card p {
+      font-size: var(--text-sm);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .clinical-note {
+      max-width: 860px;
+      margin: var(--space-8) auto 0;
+      padding: var(--space-6);
+      background: var(--navy-50);
+      border-radius: var(--rounded-lg);
+      border: 1px solid var(--navy-100);
+      text-align: center;
+    }
+
+    .clinical-note p {
+      margin: 0;
+      color: var(--navy-700);
+      font-size: var(--text-sm);
+      line-height: 1.6;
+    }
+
+    .clinical-note strong {
+      color: var(--navy-800);
+    }
+
+    /* Differentiators Section */
+    .diff-section {
+      padding: 120px 0;
+      background: var(--gray-50);
+    }
+
+    .diff-section h2 {
+      text-align: center;
+      margin-bottom: var(--space-4);
+    }
+
+    .diff-section .section-description {
+      margin-bottom: var(--space-12);
+    }
+
+    .diff-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-6);
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .diff-card {
+      display: flex;
+      gap: var(--space-4);
+      padding: var(--space-6);
+      background: var(--white);
+      border-radius: var(--rounded-lg);
+      border: 1px solid var(--gray-200);
+      transition: all var(--duration-300);
+    }
+
+    .diff-card:hover {
+      border-color: var(--teal-200);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+      transform: translateY(-2px);
+    }
+
+    .diff-card-icon {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: var(--rounded);
+      background: linear-gradient(135deg, var(--teal-100), var(--teal-50));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--teal-700);
+      font-size: 22px;
+    }
+
+    .diff-card-content h4 {
+      margin-bottom: var(--space-1);
+    }
+
+    .diff-card-content p {
+      font-size: var(--text-sm);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    /* Comparison Table Section */
+    .comparison-section {
+      padding: 120px 0;
+      background: var(--white);
+    }
+
+    .comparison-section h2 {
+      text-align: center;
+      margin-bottom: var(--space-4);
+    }
+
+    .comparison-section .section-description {
+      margin-bottom: var(--space-12);
+    }
+
+    .comparison-table-wrapper {
+      max-width: 860px;
+      margin: 0 auto;
+      border-radius: var(--rounded-lg);
+      overflow: hidden;
+      border: 1px solid var(--gray-200);
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+      padding: 16px 24px;
+      text-align: left;
+      font-size: var(--text-sm);
+      border-bottom: 1px solid var(--gray-100);
+    }
+
+    .comparison-table thead th {
+      background: var(--navy-800);
+      color: var(--white);
+      font-weight: 600;
+      font-size: var(--text-sm);
+      letter-spacing: 0.02em;
+    }
+
+    .comparison-table thead th:first-child {
+      background: var(--navy-900);
+    }
+
+    .comparison-table thead th:last-child {
+      background: var(--teal-700);
+    }
+
+    .comparison-table tbody tr:hover {
+      background: var(--gray-50);
+    }
+
+    .comparison-table tbody td {
+      color: var(--gray-600);
+    }
+
+    .comparison-table tbody td:first-child {
+      font-weight: 500;
+      color: var(--gray-900);
+    }
+
+    .comparison-table tbody td:last-child {
+      color: var(--navy-800);
+      font-weight: 500;
+    }
+
+    .check-icon {
+      color: var(--teal-600);
+      font-weight: 700;
+    }
+
+    .cross-icon {
+      color: var(--gray-300);
+    }
+
+    /* Product CTA Section */
+    .product-cta-section {
+      padding: 120px 0;
+      background: linear-gradient(135deg, var(--navy-800) 0%, var(--navy-600) 100%);
+      color: var(--white);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-cta-section::before {
+      content: '';
+      position: absolute;
+      width: 800px;
+      height: 800px;
+      border-radius: 50%;
+      right: -200px;
+      bottom: -300px;
+      background: radial-gradient(circle, rgba(13, 148, 136, 0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .product-cta-section > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .product-cta-section h2 {
+      color: var(--white);
+      font-size: var(--text-4xl);
+      letter-spacing: -0.02em;
+      margin-bottom: var(--space-4);
+    }
+
+    @media (min-width: 768px) {
+      .product-cta-section h2 {
+        font-size: var(--text-5xl);
+      }
+    }
+
+    .product-cta-section p {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: var(--text-lg);
+      max-width: 560px;
+      margin: 0 auto var(--space-8);
+    }
+
+    .product-cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-white {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      background: var(--white);
+      color: var(--navy-800);
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: var(--text-base);
+      border-radius: var(--rounded-lg);
+      text-decoration: none;
+      transition: transform var(--duration-200), box-shadow var(--duration-200);
+      cursor: pointer;
+    }
+
+    .btn-white:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-outline-white {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      background: transparent;
+      color: var(--white);
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: var(--text-base);
+      border-radius: var(--rounded-lg);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      text-decoration: none;
+      transition: all var(--duration-200);
+      cursor: pointer;
+    }
+
+    .btn-outline-white:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.5);
+      transform: translateY(-2px);
+    }
+
+    /* Footer (shared with landing) */
+    .landing-footer {
+      padding: 64px 0 32px;
+      background: var(--navy-950);
+      color: var(--white);
+    }
+
+    .landing-footer .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+
+    .landing-footer h4 {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: var(--space-4);
+    }
+
+    .landing-footer p {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: var(--text-sm);
+      line-height: 1.6;
+    }
+
+    .landing-footer .footer-links {
+      list-style: none;
+    }
+
+    .landing-footer .footer-links li {
+      margin-bottom: 10px;
+    }
+
+    .landing-footer .footer-links a {
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+      font-size: var(--text-sm);
+      transition: color var(--duration-200);
+    }
+
+    .landing-footer .footer-links a:hover {
+      color: var(--white);
+    }
+
+    .footer-brand {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: var(--text-xl);
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+      display: inline-block;
+      margin-bottom: var(--space-4);
+    }
+
+    .footer-brand span {
+      color: var(--teal-400);
+    }
+
+    .footer-divider {
+      height: 1px;
+      background: rgba(255, 255, 255, 0.08);
+      margin-bottom: var(--space-8);
+    }
+
+    .footer-bottom-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-bottom-row p {
+      margin: 0;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: var(--space-4);
+    }
+
+    .footer-social a {
+      color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      font-size: 20px;
+      transition: color var(--duration-200);
+    }
+
+    .footer-social a:hover {
+      color: var(--white);
+    }
+
+    /* Scroll animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* Responsive */
+    @media (max-width: 1023px) {
+      .system-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .clinical-grid,
+      .diff-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .landing-footer .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .comparison-table-wrapper {
+        overflow-x: auto;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .product-hero {
+        padding: 120px 0 60px;
+      }
+
+      .product-hero h1 {
+        font-size: var(--text-4xl);
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .landing-footer .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom-row {
+        flex-direction: column;
+        gap: var(--space-4);
+        text-align: center;
+      }
+
+      .hiw-timeline::before {
+        left: 24px;
+      }
+
+      .hiw-timeline-marker {
+        width: 48px;
+        height: 48px;
+        font-size: 22px;
+      }
+
+      .hiw-timeline-step {
+        gap: var(--space-4);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="landing-nav">
+    <a href="index.html" class="nav-brand">Samaritan<span>.</span></a>
+    <div class="nav-links">
+      <a href="index.html">Company</a>
+      <a href="arobag.html" class="active">AroBag</a>
+      <a href="index.html#team">Team</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="#contact" class="nav-cta">Register Interest</a>
+  </nav>
+
+  <!-- Product Hero -->
+  <section class="product-hero">
+    <div class="container">
+      <div class="product-badge reveal">
+        <i class="ph ph-flask"></i>
+        Patent Pending &middot; Pre-Clinical Trials
+      </div>
+      <h1 class="reveal reveal-delay-1">Smart urine monitoring, powered by AI</h1>
+      <p class="product-hero-lead reveal reveal-delay-2">
+        AroBag is the first integrated system combining a smart monitoring bag, AI prediction engine, and hospital EMR integration — designed to detect Acute Kidney Injury hours earlier.
+      </p>
+      <div class="product-hero-ctas reveal reveal-delay-3">
+        <a href="#contact" class="button button-primary">
+          Register Interest for Pilot
+          <i class="ph ph-arrow-right"></i>
+        </a>
+        <a href="#how-it-works" class="button button-secondary">
+          See How It Works
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Visual -->
+  <section class="product-visual-section">
+    <div class="container">
+      <div class="product-visual-container reveal">
+        <div class="product-visual-icon">
+          <i class="ph ph-drop-half-bottom"></i>
+        </div>
+        <div class="product-visual-label">
+          Product renders coming soon — 3D mockups available on request
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- System Overview -->
+  <section class="system-section">
+    <div class="container">
+      <p class="eyebrow">The Complete System</p>
+      <h2 class="reveal">Three components. One integrated solution.</h2>
+      <p class="section-description reveal reveal-delay-1">
+        AroBag is the only product that combines hardware, AI, and software into a single, affordable system for continuous kidney monitoring.
+      </p>
+      <div class="system-grid">
+        <div class="system-card reveal">
+          <div class="system-card-icon">
+            <i class="ph ph-drop"></i>
+          </div>
+          <h3>Smart Monitoring Bag</h3>
+          <p>An intelligently designed urine collection bag for catheterised ICU patients that continuously captures output and biomarker data.</p>
+          <ul class="system-card-features">
+            <li>
+              <i class="ph ph-check-circle"></i>
+              Continuous urine output measurement
+            </li>
+            <li>
+              <i class="ph ph-check-circle"></i>
+              Specific gravity monitoring
+            </li>
+            <li>
+              <i class="ph ph-check-circle"></i>
+              Multiple biomarker capture
+            </li>
+            <li>
+              <i class="ph ph-check-circle"></i>
+              Integrates into existing ICU workflows
+            </li>
+          </ul>
+        </div>
+        <div class="system-card reveal reveal-delay-1">
+          <div class="system-card-icon">
+            <i class="ph ph-brain"></i>
+          </div>
+          <h3>AI Prediction Engine</h3>
+          <p>Machine learning models trained on urine biomarker patterns to generate predictive alerts for AKI and CKD — before conventional diagnosis.</p>
+          <ul class="system-card-features">
+            <li>
+              <i class="ph ph-check-circle"></i>
+              Real-time pattern analysis
+            </li>
+            <li>
+              <i class="ph ph-check-circle"></i>
+              AKI risk prediction
+            </li>
+            <li>
+              <i class="ph ph-check-circle"></i>
+              CKD progression monitoring
+            </li>
+            <li>
+              <i class="ph ph-check-circle"></i>
+              Continuous learning and improvement
+            </li>
+          </ul>
+        </div>
+        <div class="system-card reveal reveal-delay-2">
+          <div class="system-card-icon">
+            <i class="ph ph-device-mobile"></i>
+          </div>
+          <h3>Companion App + EMR</h3>
+          <p>A mobile application that uses computer vision to digitise measurements and integrates seamlessly with hospital Electronic Medical Records.</p>
+          <ul class="system-card-features">
+            <li>
+              <i class="ph ph-check-circle"></i>
+              Computer vision data capture
+            </li>
+            <li>
+              <i class="ph ph-check-circle"></i>
+              Real-time alerts and notifications
+            </li>
+            <li>
+              <i class="ph ph-check-circle"></i>
+              EMR system integration
+            </li>
+            <li>
+              <i class="ph ph-check-circle"></i>
+              Clinical dashboard and trends
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works (Timeline) -->
+  <section class="hiw-product-section" id="how-it-works">
+    <div class="container">
+      <p class="eyebrow" style="color: var(--teal-400);">How It Works</p>
+      <h2 class="reveal">From collection to clinical action</h2>
+      <p class="section-description reveal reveal-delay-1" style="color: rgba(255, 255, 255, 0.7);">
+        AroBag transforms routine urine collection into an intelligent monitoring system in four seamless steps.
+      </p>
+      <div class="hiw-timeline">
+        <div class="hiw-timeline-step reveal">
+          <div class="hiw-timeline-marker">
+            <i class="ph ph-drop-half-bottom"></i>
+          </div>
+          <div class="hiw-timeline-content">
+            <span class="step-label">Step 1</span>
+            <h4>Collect &amp; Monitor</h4>
+            <p>AroBag replaces the standard urine collection bag, continuously measuring urine output, specific gravity, and key biomarkers from catheterised ICU patients — with zero workflow disruption.</p>
+          </div>
+        </div>
+        <div class="hiw-timeline-step reveal reveal-delay-1">
+          <div class="hiw-timeline-marker">
+            <i class="ph ph-camera"></i>
+          </div>
+          <div class="hiw-timeline-content">
+            <span class="step-label">Step 2</span>
+            <h4>Digitise with Computer Vision</h4>
+            <p>The companion app uses computer vision to digitally capture and transmit measurements — eliminating manual reading errors and automating data entry.</p>
+          </div>
+        </div>
+        <div class="hiw-timeline-step reveal reveal-delay-2">
+          <div class="hiw-timeline-marker">
+            <i class="ph ph-chart-line-up"></i>
+          </div>
+          <div class="hiw-timeline-content">
+            <span class="step-label">Step 3</span>
+            <h4>Analyse &amp; Predict</h4>
+            <p>AI models analyse biomarker patterns in real-time, comparing against thousands of data points to detect early signals of AKI and CKD — hours before traditional creatinine-based diagnosis.</p>
+          </div>
+        </div>
+        <div class="hiw-timeline-step reveal reveal-delay-3">
+          <div class="hiw-timeline-marker">
+            <i class="ph ph-bell-ringing"></i>
+          </div>
+          <div class="hiw-timeline-content">
+            <span class="step-label">Step 4</span>
+            <h4>Alert &amp; Integrate</h4>
+            <p>Predictive alerts are delivered to clinicians via the companion app and integrated directly into the hospital's EMR system — enabling faster, data-driven intervention.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clinical Evidence -->
+  <section class="clinical-section" id="clinical">
+    <div class="container">
+      <p class="eyebrow">Clinical Context</p>
+      <h2 class="reveal">The science behind early detection</h2>
+      <p class="section-description reveal reveal-delay-1">
+        AI-based AKI prediction is backed by a growing body of clinical research. AroBag builds on this foundation with continuous, real-time biomarker monitoring.
+      </p>
+      <div class="clinical-grid">
+        <div class="clinical-card reveal">
+          <div class="clinical-card-icon">
+            <i class="ph ph-chart-bar"></i>
+          </div>
+          <h4>AKI affects 20–50% of ICU patients</h4>
+          <p>Acute Kidney Injury is one of the most common critical complications in intensive care, with incidence rates varying by patient population and severity of illness.</p>
+        </div>
+        <div class="clinical-card reveal reveal-delay-1">
+          <div class="clinical-card-icon">
+            <i class="ph ph-warning-circle"></i>
+          </div>
+          <h4>50%+ mortality in severe cases</h4>
+          <p>Severe AKI carries extraordinarily high mortality rates, making early detection and intervention one of the highest-impact opportunities in critical care.</p>
+        </div>
+        <div class="clinical-card reveal reveal-delay-2">
+          <div class="clinical-card-icon">
+            <i class="ph ph-clock-countdown"></i>
+          </div>
+          <h4>Hours matter for outcomes</h4>
+          <p>Research consistently demonstrates that earlier detection of AKI — even by just a few hours — dramatically improves patient outcomes and reduces the need for costly interventions like dialysis.</p>
+        </div>
+        <div class="clinical-card reveal reveal-delay-3">
+          <div class="clinical-card-icon">
+            <i class="ph ph-test-tube"></i>
+          </div>
+          <h4>Urine biomarkers are increasingly validated</h4>
+          <p>A growing body of research validates urine-based biomarkers (TIMP-2, IGFBP7, NGAL) as early AKI indicators — supporting the scientific basis for continuous urine monitoring.</p>
+        </div>
+      </div>
+      <div class="clinical-note reveal">
+        <p><strong>Note:</strong> AroBag is currently in pre-clinical trials. Specific performance data and clinical validation results will be published as trials progress. Please <a href="#contact" style="color: var(--navy-600); font-weight: 500;">register your interest</a> to receive updates.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Differentiators -->
+  <section class="diff-section">
+    <div class="container">
+      <p class="eyebrow">Why AroBag</p>
+      <h2 class="reveal">What makes AroBag different</h2>
+      <p class="section-description reveal reveal-delay-1">
+        In a market where most solutions address only part of the problem, AroBag delivers the complete answer.
+      </p>
+      <div class="diff-grid">
+        <div class="diff-card reveal">
+          <div class="diff-card-icon">
+            <i class="ph ph-puzzle-piece"></i>
+          </div>
+          <div class="diff-card-content">
+            <h4>All-in-One System</h4>
+            <p>Hardware + AI + EMR integration in one product. Most competitors offer only 1-2 of these components.</p>
+          </div>
+        </div>
+        <div class="diff-card reveal reveal-delay-1">
+          <div class="diff-card-icon">
+            <i class="ph ph-currency-circle-dollar"></i>
+          </div>
+          <div class="diff-card-content">
+            <h4>Fraction of the Cost</h4>
+            <p>Designed to be affordable for hospitals globally — not just premium facilities in developed markets.</p>
+          </div>
+        </div>
+        <div class="diff-card reveal reveal-delay-2">
+          <div class="diff-card-icon">
+            <i class="ph ph-arrows-clockwise"></i>
+          </div>
+          <div class="diff-card-content">
+            <h4>Workflow Integration</h4>
+            <p>Bag form factor replaces existing collection systems with zero workflow disruption for ICU nurses.</p>
+          </div>
+        </div>
+        <div class="diff-card reveal reveal-delay-3">
+          <div class="diff-card-icon">
+            <i class="ph ph-timer"></i>
+          </div>
+          <div class="diff-card-content">
+            <h4>Continuous Monitoring</h4>
+            <p>Real-time continuous data versus point-in-time biomarker tests — catching what hourly readings miss.</p>
+          </div>
+        </div>
+        <div class="diff-card reveal">
+          <div class="diff-card-icon">
+            <i class="ph ph-eye"></i>
+          </div>
+          <div class="diff-card-content">
+            <h4>Computer Vision App</h4>
+            <p>Novel computer vision approach eliminates manual reading errors and automates data transmission.</p>
+          </div>
+        </div>
+        <div class="diff-card reveal reveal-delay-1">
+          <div class="diff-card-icon">
+            <i class="ph ph-globe-hemisphere-west"></i>
+          </div>
+          <div class="diff-card-content">
+            <h4>Global Reach</h4>
+            <p>India-based development with cost advantages enabling access to large hospital systems worldwide.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Table -->
+  <section class="comparison-section">
+    <div class="container">
+      <p class="eyebrow">Competitive Landscape</p>
+      <h2 class="reveal">AroBag vs. the current standard of care</h2>
+      <p class="section-description reveal reveal-delay-1">
+        See how AroBag compares to manual measurement and existing solutions on the market.
+      </p>
+      <div class="comparison-table-wrapper reveal reveal-delay-2">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Manual / Standard</th>
+              <th>AroBag</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Monitoring Type</td>
+              <td>Hourly manual readings</td>
+              <td>Continuous, real-time</td>
+            </tr>
+            <tr>
+              <td>AI Prediction</td>
+              <td><span class="cross-icon">&#x2715;</span> None</td>
+              <td><span class="check-icon">&#x2713;</span> AKI &amp; CKD prediction</td>
+            </tr>
+            <tr>
+              <td>Data Capture</td>
+              <td>Manual entry (error-prone)</td>
+              <td>Computer vision (automated)</td>
+            </tr>
+            <tr>
+              <td>EMR Integration</td>
+              <td><span class="cross-icon">&#x2715;</span> Manual charting</td>
+              <td><span class="check-icon">&#x2713;</span> Direct integration</td>
+            </tr>
+            <tr>
+              <td>Multiple Biomarkers</td>
+              <td>Urine output only</td>
+              <td>Output + specific gravity + biomarkers</td>
+            </tr>
+            <tr>
+              <td>Workflow Disruption</td>
+              <td>Takes nurses away from care</td>
+              <td>Zero — replaces standard bag</td>
+            </tr>
+            <tr>
+              <td>Cost</td>
+              <td>Low (but hidden labour costs)</td>
+              <td>Affordable — fraction of alternatives</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product CTA Section -->
+  <section class="product-cta-section" id="contact">
+    <div class="container">
+      <p class="eyebrow" style="color: var(--teal-300);">Get Involved</p>
+      <h2 class="reveal">Interested in AroBag?</h2>
+      <p class="reveal reveal-delay-1">
+        AroBag is in pre-clinical trials. Register your interest to receive updates, request a meeting, or learn more about our pilot programme.
+      </p>
+      <div class="product-cta-buttons reveal reveal-delay-2">
+        <a href="mailto:samaritan.bio@gmail.com?subject=AroBag%20Pilot%20Interest" class="btn-white">
+          <i class="ph ph-envelope-simple"></i>
+          Register Interest
+        </a>
+        <a href="mailto:samaritan.bio@gmail.com?subject=AroBag%20Meeting%20Request" class="btn-outline-white">
+          <i class="ph ph-calendar-blank"></i>
+          Book a Meeting
+        </a>
+      </div>
+      <p class="reveal reveal-delay-3"
+        style="margin-top: var(--space-8); font-size: var(--text-sm); color: rgba(255, 255, 255, 0.5);">
+        For investors, please visit our <a href="index.html"
+          style="color: var(--teal-300); text-decoration: underline;">company page</a> for the broader Samaritan vision.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="landing-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="footer-brand">Samaritan<span>.</span></a>
+          <p>Building AI-powered biomarker intelligence for the human body. Starting with the world's most accessible
+            biofluid.</p>
+          <p style="margin-top: var(--space-4); font-size: var(--text-xs);">
+            M/S Samaritan AI Private Limited<br>
+            Bengaluru, Karnataka, India
+          </p>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#team">Team</a></li>
+            <li><a href="mailto:samaritan.bio@gmail.com">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Product</h4>
+          <ul class="footer-links">
+            <li><a href="arobag.html">AroBag</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#clinical">Clinical Evidence</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Connect</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:samaritan.bio@gmail.com">samaritan.bio@gmail.com</a></li>
+            <li><a href="https://in.linkedin.com/in/raokaran" target="_blank" rel="noopener">LinkedIn — Karan</a></li>
+            <li><a href="https://www.linkedin.com/in/raghav-behl-85486a42/" target="_blank" rel="noopener">LinkedIn —
+                Raghav</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-divider"></div>
+      <div class="footer-bottom-row">
+        <p>&copy; 2025 Samaritan AI Private Limited. All rights reserved.</p>
+        <div class="footer-social">
+          <a href="https://in.linkedin.com/in/raokaran" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <i class="ph ph-linkedin-logo"></i>
+          </a>
+          <a href="mailto:samaritan.bio@gmail.com" aria-label="Email">
+            <i class="ph ph-envelope-simple"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Animation Script -->
+  <script>
+    // Intersection Observer for scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.15,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
