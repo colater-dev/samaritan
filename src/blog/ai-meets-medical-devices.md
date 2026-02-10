@@ -6,6 +6,7 @@ author: Samaritan Team
 tags:
   - AI & Technology
   - Medical Devices
+cta: careers
 draft: true
 ---
 

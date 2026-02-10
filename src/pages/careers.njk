@@ -1,0 +1,84 @@
+---
+layout: layouts/base.njk
+title: Careers
+description: "Join Samaritan and help build the future of AI-powered biomarker intelligence. We're hiring across engineering, clinical research, and more."
+permalink: /careers/
+---
+
+<section class="careers-hero">
+  <div class="container">
+    <p class="eyebrow eyebrow-left eyebrow-teal">Careers</p>
+    <h1 class="reveal">Build the future of kidney care</h1>
+    <p class="careers-hero-lead reveal reveal-delay-1">
+      We're a small team in Bengaluru working on one of the biggest unsolved problems in critical care.
+      If you want your work to directly impact patient outcomes, we'd love to hear from you.
+    </p>
+  </div>
+</section>
+
+<section class="careers-values">
+  <div class="container">
+    <div class="careers-values-grid">
+      <div class="careers-value-card reveal">
+        <div class="careers-value-icon"><i class="ph-fill ph-heart-half" aria-hidden="true"></i></div>
+        <h4>Mission-driven</h4>
+        <p>Every line of code, every sensor calibration, every clinical conversation is in service of detecting kidney injury earlier and saving lives.</p>
+      </div>
+      <div class="careers-value-card reveal reveal-delay-1">
+        <div class="careers-value-icon"><i class="ph-fill ph-puzzle-piece" aria-hidden="true"></i></div>
+        <h4>Full-stack problems</h4>
+        <p>We build hardware, AI, and software together. You won't work in a silo — you'll see how your work connects to the entire system.</p>
+      </div>
+      <div class="careers-value-card reveal reveal-delay-2">
+        <div class="careers-value-icon"><i class="ph-fill ph-rocket-launch" aria-hidden="true"></i></div>
+        <h4>Early stage, high impact</h4>
+        <p>We're pre-clinical and growing. Joining now means shaping the product, the culture, and the company from the ground up.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="careers-openings" id="openings">
+  <div class="container">
+    <h2 class="reveal">Open Positions</h2>
+    <p class="section-description reveal reveal-delay-1">
+      All roles are based in Bengaluru unless noted otherwise. We're flexible on hybrid arrangements.
+    </p>
+    <div class="careers-list">
+      {% for job in careers %}
+        {% if job.active %}
+        <div class="career-card reveal">
+          <div class="career-card-header">
+            <div>
+              <h3>{{ job.title }}</h3>
+              <div class="career-card-meta">
+                <span>{{ job.department }}</span>
+                <span class="career-meta-sep">&middot;</span>
+                <span>{{ job.location }}</span>
+                <span class="career-meta-sep">&middot;</span>
+                <span>{{ job.type }}</span>
+              </div>
+            </div>
+            <a href="mailto:{{ site.email }}?subject=Application%3A%20{{ job.title | urlencode }}" class="button button-primary career-apply-btn">
+              Apply
+              <i class="ph-fill ph-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+          <p class="career-card-description">{{ job.description }}</p>
+          {% if job.requirements %}
+          <ul class="career-card-requirements">
+            {% for req in job.requirements %}
+            <li><i class="ph-fill ph-check-circle" aria-hidden="true"></i> {{ req }}</li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <div class="careers-general reveal">
+      <p>Don't see a perfect fit? We're always open to hearing from exceptional people. Send us a note at <a href="mailto:{{ site.email }}">{{ site.email }}</a> and tell us what you'd bring to Samaritan.</p>
+    </div>
+  </div>
+</section>

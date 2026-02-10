@@ -38,3 +38,24 @@ layout: layouts/base.njk
     </footer>
   </div>
 </article>
+
+{# Configurable CTA — set `cta` in post front matter to a key from site.ctas (e.g. cta: demo) #}
+{% set ctaKey = cta or "demo" %}
+{% set ctaData = site.ctas[ctaKey] %}
+{% if ctaData %}
+<section class="post-cta-section">
+  <div class="container">
+    <div class="post-cta-card">
+      {% if ctaData.eyebrow %}
+      <p class="post-cta-eyebrow">{{ ctaData.eyebrow }}</p>
+      {% endif %}
+      <h2 class="post-cta-heading">{{ ctaData.heading }}</h2>
+      <p class="post-cta-body">{{ ctaData.body }}</p>
+      <a href="{{ ctaData.buttonUrl }}" class="button button-primary post-cta-button">
+        <i class="ph-fill {{ ctaData.buttonIcon }}" aria-hidden="true"></i>
+        {{ ctaData.buttonText }}
+      </a>
+    </div>
+  </div>
+</section>
+{% endif %}

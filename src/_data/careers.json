@@ -1,0 +1,58 @@
+[
+  {
+    "title": "Embedded Systems Engineer",
+    "department": "Hardware",
+    "location": "Bengaluru, India",
+    "type": "Full-time",
+    "description": "Design and develop the embedded firmware and sensor interfaces for AroBag's smart monitoring hardware. You'll work at the intersection of medical device engineering and IoT, building reliable, real-time data acquisition systems for clinical environments.",
+    "requirements": [
+      "3+ years experience in embedded C/C++ development",
+      "Experience with sensor integration and signal processing",
+      "Familiarity with medical device standards (IEC 62304) is a plus",
+      "Strong debugging and hardware-software integration skills"
+    ],
+    "active": true
+  },
+  {
+    "title": "Machine Learning Engineer",
+    "department": "AI & Data",
+    "location": "Bengaluru, India (Hybrid)",
+    "type": "Full-time",
+    "description": "Build and deploy the predictive models that power AroBag's AKI and CKD detection engine. You'll work with clinical time-series data, develop real-time inference pipelines, and collaborate closely with our clinical advisory team.",
+    "requirements": [
+      "2+ years experience building ML models for time-series or healthcare data",
+      "Proficiency in Python and frameworks like PyTorch or TensorFlow",
+      "Experience with model deployment and edge inference is a plus",
+      "Interest in clinical AI and regulatory requirements for SaMD"
+    ],
+    "active": true
+  },
+  {
+    "title": "Clinical Research Associate",
+    "department": "Clinical",
+    "location": "Bengaluru, India",
+    "type": "Full-time",
+    "description": "Support the design and execution of AroBag's clinical validation studies. You'll coordinate with hospital partners, manage trial documentation, and help build the evidence base for regulatory submissions.",
+    "requirements": [
+      "Background in life sciences, biomedical engineering, or clinical research",
+      "Experience with clinical trial protocols and regulatory documentation",
+      "Strong communication skills for hospital and clinician engagement",
+      "Familiarity with CDSCO or FDA regulatory pathways is a plus"
+    ],
+    "active": true
+  },
+  {
+    "title": "Full-Stack Developer",
+    "department": "Software",
+    "location": "Remote (India)",
+    "type": "Full-time",
+    "description": "Build the companion app and clinical dashboard that connects AroBag to hospital systems. You'll develop the mobile app, web dashboard, and EMR integration layer that delivers real-time alerts to clinicians.",
+    "requirements": [
+      "3+ years full-stack experience (React/React Native + Node.js or similar)",
+      "Experience with real-time data systems and APIs",
+      "Interest in healthcare technology and HL7/FHIR standards",
+      "Bonus: experience with computer vision or mobile camera integration"
+    ],
+    "active": true
+  }
+]

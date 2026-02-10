@@ -6,6 +6,7 @@ author: Samaritan Team
 tags:
   - Strategy
   - Healthcare
+cta: pilot
 draft: true
 ---
 
