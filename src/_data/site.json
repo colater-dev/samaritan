@@ -1,0 +1,22 @@
+{
+  "title": "Samaritan Bio",
+  "description": "Building AI-powered biomarker intelligence for the human body, starting with the world's most accessible biofluid.",
+  "url": "https://samaritan.bio",
+  "email": "samaritan.bio@gmail.com",
+  "companyName": "M/S Samaritan AI Private Limited",
+  "location": "Bengaluru, Karnataka, India",
+  "founders": [
+    {
+      "name": "Karan Rao",
+      "role": "Co-founder",
+      "linkedin": "https://in.linkedin.com/in/raokaran",
+      "initials": "KR"
+    },
+    {
+      "name": "Raghav Gopal Behl",
+      "role": "Co-founder",
+      "linkedin": "https://www.linkedin.com/in/raghav-behl-85486a42/",
+      "initials": "RB"
+    }
+  ]
+}
