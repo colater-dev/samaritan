@@ -13,7 +13,7 @@ Every hour, in intensive care units across the world, nurses manually measure ur
 
 ## The case for urine
 
-Blood has long dominated the diagnostic landscape. But blood draws are invasive, intermittent, and require laboratory processing. Urine, by contrast, is continuously produced and naturally collected in the roughly 25% of ICU patients who are catheterised.
+Blood has long dominated the diagnostic landscape. But blood draws are invasive, intermittent, and require laboratory processing. Urine, by contrast, is continuously produced and naturally collected. With 300 million surgeries performed globally each year — up to 25% resulting in ICU admission — and roughly 80% of those ICU patients catheterised, there is a massive, continuously available data stream already flowing bedside.
 
 More importantly, urine carries a rich profile of biomarkers that can signal organ distress far earlier than conventional blood-based tests. Kidney Injury Molecule-1 (KIM-1), Neutrophil Gelatinase-Associated Lipocalin (NGAL), and Interleukin-18 are just three of the validated urine biomarkers for Acute Kidney Injury — a condition that affects 20–50% of ICU patients and carries a mortality rate exceeding 50% in severe cases.
 

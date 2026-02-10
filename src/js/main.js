@@ -78,6 +78,6 @@ const statObserver = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.5 });
 
-document.querySelectorAll('.stat-number[data-target]').forEach(el => {
+document.querySelectorAll('.stat-number[data-target], .funnel-number[data-target]').forEach(el => {
   statObserver.observe(el);
 });

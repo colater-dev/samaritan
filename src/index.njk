@@ -61,26 +61,42 @@ description: Samaritan is building AI-powered biomarker intelligence, starting w
   <img src="/assets/hero-gradient.svg" alt="" class="hero-gradient" aria-hidden="true">
 </section>
 
-<!-- Stats Section -->
-<section class="deck-section-short stats-section">
+<!-- Patient Funnel Section -->
+<section class="deck-section-short funnel-section">
   <div class="container">
-    <div class="stats-grid">
-      <div class="stat-card reveal">
-        <div class="stat-number" data-target="50" data-suffix="%">0%</div>
-        <p class="stat-label">of ICU patients develop Acute Kidney Injury</p>
-        <p class="stat-range">(20–50% range)</p>
-        <p class="stat-source"><a href="https://kdigo.org/guidelines/acute-kidney-injury/" target="_blank" rel="noopener">KDIGO Clinical Practice Guidelines</a></p>
+    <p class="eyebrow">Where Problems Begin</p>
+    <h2 class="text-center reveal">Surgery &rarr; ICU &rarr; Catheter</h2>
+    <p class="section-description reveal reveal-delay-1">
+      Every year, a massive patient population flows through the same critical path — and kidney injury goes undetected until it's too late.
+    </p>
+    <div class="funnel-grid">
+      <div class="funnel-step reveal">
+        <div class="funnel-icon"><i class="ph-fill ph-heartbeat" aria-hidden="true"></i></div>
+        <div class="funnel-number" data-target="300" data-suffix="M">0M</div>
+        <p class="funnel-label">surgeries performed annually worldwide</p>
+        <div class="funnel-tag">Surgery</div>
       </div>
-      <div class="stat-card reveal reveal-delay-1">
-        <div class="stat-number" data-target="50" data-suffix="%+">0%+</div>
-        <p class="stat-label">mortality in severe AKI cases</p>
-        <p class="stat-source"><a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noopener">Hoste et al., Intensive Care Medicine</a></p>
+      <div class="funnel-arrow reveal reveal-delay-1">
+        <i class="ph-fill ph-arrow-right" aria-hidden="true"></i>
       </div>
-      <div class="stat-card reveal reveal-delay-2">
-        <div class="stat-number" data-target="99" data-suffix="%">0%</div>
-        <p class="stat-label">of the monitoring market is still uncaptured</p>
-        <p class="stat-source">Based on competitive landscape analysis</p>
+      <div class="funnel-step reveal reveal-delay-1">
+        <div class="funnel-icon"><i class="ph-fill ph-bed" aria-hidden="true"></i></div>
+        <div class="funnel-number">Up to 25%</div>
+        <p class="funnel-label">of surgeries result in ICU admission</p>
+        <div class="funnel-tag">ICU</div>
       </div>
+      <div class="funnel-arrow reveal reveal-delay-2">
+        <i class="ph-fill ph-arrow-right" aria-hidden="true"></i>
+      </div>
+      <div class="funnel-step reveal reveal-delay-2">
+        <div class="funnel-icon"><i class="ph-fill ph-drop" aria-hidden="true"></i></div>
+        <div class="funnel-number" data-target="80" data-suffix="%">0%</div>
+        <p class="funnel-label">of ICU patients are catheterised</p>
+        <div class="funnel-tag">Catheter</div>
+      </div>
+    </div>
+    <div class="funnel-footnote reveal reveal-delay-3">
+      <p>Of these catheterised patients, <strong>20–50% will develop Acute Kidney Injury</strong> — with mortality exceeding 50% in severe cases. Yet there is no continuous monitoring system in place.</p>
     </div>
   </div>
 </section>
@@ -286,30 +302,45 @@ description: Samaritan is building AI-powered biomarker intelligence, starting w
 <section class="deck-section-short team-section" id="team">
   <div class="container">
     <p class="eyebrow">Leadership</p>
-    <h2 class="reveal">Built by people who know the problem</h2>
+    <h2 class="reveal">Carnegie Mellon engineers. Clinical advisors from India's top hospitals.</h2>
     <p class="section-description reveal reveal-delay-1">
-      Our founders combine deep medical device expertise with a vision for what AI can do for patient outcomes.
+      Our team combines deep technical expertise with frontline clinical insight.
     </p>
+
+    <!-- Founders -->
     <div class="team-grid">
-      {% for founder in site.founders %}
+      {% for person in site.team.founders %}
       <div class="team-card reveal{% if loop.index > 1 %} reveal-delay-{{ loop.index0 }}{% endif %}">
-        <div class="team-avatar">{{ founder.initials }}</div>
-        <h4>{{ founder.name }}</h4>
-        <p class="role">{{ founder.role }}</p>
-        <p class="bio">
-          {% if loop.index0 == 0 %}
-          Driving Samaritan's product development and technology strategy to create India's most innovative medical devices.
-          {% else %}
-          Building India's most innovative medical devices. Leading Samaritan's clinical strategy and market development.
-          {% endif %}
-        </p>
+        <div class="team-avatar">{{ person.initials }}</div>
+        <h4>{{ person.name }}</h4>
+        <p class="role">{{ person.role }}</p>
+        <p class="bio">{{ person.bio }}</p>
+        {% if person.linkedin %}
         <div class="team-social">
-          <a href="{{ founder.linkedin }}" target="_blank" rel="noopener">
+          <a href="{{ person.linkedin }}" target="_blank" rel="noopener">
             <i class="ph-fill ph-linkedin-logo" aria-hidden="true"></i> LinkedIn
           </a>
         </div>
+        {% endif %}
       </div>
       {% endfor %}
+    </div>
+
+    <!-- Advisors & Mentors -->
+    <div class="advisors-section">
+      <h3 class="advisors-heading reveal">Clinical Advisors & Mentors</h3>
+      <div class="advisors-grid">
+        {% for person in site.team.advisors %}
+        <div class="advisor-card reveal{% if loop.index > 1 %} reveal-delay-{{ loop.index0 }}{% endif %}">
+          <div class="advisor-avatar">{{ person.initials }}</div>
+          <div class="advisor-info">
+            <h4>{{ person.name }}</h4>
+            <p class="role">{{ person.role }}</p>
+            <p class="bio">{{ person.bio }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
     </div>
   </div>
 </section>

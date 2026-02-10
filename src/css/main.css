@@ -881,6 +881,156 @@ h4 {
   .stat-number { font-size: 72px; }
 }
 
+/* Patient Funnel Section */
+.funnel-section {
+  background: var(--color-gray-50);
+  padding: 100px 0 80px;
+}
+
+.funnel-section h2 {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.funnel-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  max-width: 960px;
+  margin: 48px auto 0;
+}
+
+.funnel-step {
+  text-align: center;
+  padding: 32px 24px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px -2px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.06);
+  flex: 1;
+  min-width: 200px;
+  transition: transform 0.3s;
+}
+
+.funnel-step:hover {
+  transform: translateY(-3px);
+}
+
+.funnel-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-teal-100), var(--color-teal-50));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  font-size: 24px;
+  color: var(--color-teal-700);
+  border: 2px solid var(--color-teal-200);
+}
+
+.funnel-step:nth-child(3) .funnel-icon {
+  background: linear-gradient(135deg, var(--color-navy-100), var(--color-navy-50));
+  color: var(--color-navy-700);
+  border-color: var(--color-navy-200);
+}
+
+.funnel-step:nth-child(5) .funnel-icon {
+  background: linear-gradient(135deg, #fef3c7, #fffbeb);
+  color: #92400e;
+  border-color: #fde68a;
+}
+
+.funnel-number {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--color-navy-800);
+  margin-bottom: 8px;
+}
+
+.funnel-label {
+  font-size: 14px;
+  color: var(--color-gray-500);
+  line-height: 1.5;
+  margin: 0 0 16px;
+  max-width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.funnel-tag {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 12px;
+  border-radius: 100px;
+  background: var(--color-teal-50);
+  color: var(--color-teal-700);
+}
+
+.funnel-step:nth-child(3) .funnel-tag {
+  background: var(--color-navy-50);
+  color: var(--color-navy-700);
+}
+
+.funnel-step:nth-child(5) .funnel-tag {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.funnel-arrow {
+  padding: 0 16px;
+  font-size: 28px;
+  color: var(--color-gray-300);
+  flex-shrink: 0;
+}
+
+.funnel-footnote {
+  max-width: 720px;
+  margin: 40px auto 0;
+  padding: 20px 24px;
+  background: #fef2f2;
+  border-radius: 8px;
+  border-left: 3px solid #ef4444;
+  text-align: center;
+}
+
+.funnel-footnote p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-gray-700);
+  margin: 0;
+}
+
+.funnel-footnote strong {
+  color: #dc2626;
+}
+
+@media (min-width: 768px) {
+  .funnel-number { font-size: 60px; }
+}
+
+@media (max-width: 767px) {
+  .funnel-grid {
+    flex-direction: column;
+    gap: 0;
+  }
+  .funnel-arrow {
+    transform: rotate(90deg);
+    padding: 8px 0;
+  }
+  .funnel-step {
+    min-width: auto;
+    width: 100%;
+  }
+}
+
 /* Vision Section */
 .vision-section {
   background: var(--color-navy-900);
@@ -1308,6 +1458,87 @@ h4 {
 }
 
 .team-social a:hover { color: var(--color-navy-800); }
+
+/* Advisors & Mentors */
+.advisors-section {
+  margin-top: 56px;
+  padding-top: 40px;
+  border-top: 1px solid var(--color-gray-200);
+}
+
+.advisors-heading {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--color-gray-500);
+  margin-bottom: 32px;
+  letter-spacing: -0.01em;
+}
+
+.advisors-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 840px;
+  margin: 0 auto;
+}
+
+.advisor-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px;
+  background: var(--color-gray-50);
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+.advisor-card:hover {
+  transform: translateY(-2px);
+}
+
+.advisor-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-teal-200), var(--color-teal-100));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-teal-800);
+  flex-shrink: 0;
+}
+
+.advisor-info h4 {
+  font-size: 15px;
+  margin-bottom: 2px;
+}
+
+.advisor-info .role {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-teal-600);
+  margin-bottom: 6px;
+}
+
+.advisor-info .bio {
+  font-size: 13px;
+  color: var(--color-gray-500);
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (max-width: 767px) {
+  .advisors-grid { grid-template-columns: 1fr; }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .advisors-grid { grid-template-columns: repeat(2, 1fr); }
+}
 
 /* CTA Section */
 .cta-section {
