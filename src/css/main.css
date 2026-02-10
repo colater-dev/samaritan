@@ -1663,3 +1663,758 @@ h4 {
 .back-to-blog:hover {
   color: var(--color-navy-800);
 }
+
+/* ==========================================================================
+   AroBag Product Page Styles
+   ========================================================================== */
+
+.product-hero {
+  padding: 160px 0 100px;
+  background: linear-gradient(180deg, white 0%, var(--color-gray-50) 100%);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-hero::before {
+  content: '';
+  position: absolute;
+  width: 1000px;
+  height: 600px;
+  left: 50%;
+  bottom: -200px;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse, rgba(13, 148, 136, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.product-hero > * { position: relative; z-index: 1; }
+
+.product-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background: var(--color-teal-50);
+  border: 1px solid var(--color-teal-200);
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-teal-700);
+}
+
+.product-badge-wrapper { margin-bottom: 24px; }
+.product-badge i { font-size: 16px; }
+
+.product-hero h1 {
+  font-size: 48px;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  max-width: 780px;
+  margin: 0 auto 24px;
+}
+
+.product-hero-lead {
+  font-size: 20px;
+  line-height: 1.5;
+  color: var(--color-gray-500);
+  max-width: 600px;
+  margin: 0 auto 32px;
+}
+
+.product-hero-ctas {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+  .product-hero h1 { font-size: 60px; }
+}
+
+/* Product Visual Placeholder */
+.product-visual-section {
+  padding: 0 0 80px;
+  background: var(--color-gray-50);
+}
+
+.product-visual-container {
+  max-width: 960px;
+  margin: 0 auto;
+  aspect-ratio: 16/9;
+  background: linear-gradient(135deg, var(--color-navy-100) 0%, var(--color-navy-50) 50%, var(--color-teal-50) 100%);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  box-shadow: inset 0px 0px 12px rgba(0, 0, 0, 0.08), 0 20px 60px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.product-visual-container::before {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  top: 20%;
+  left: 30%;
+  background: radial-gradient(circle, rgba(13, 148, 136, 0.1) 0%, transparent 70%);
+}
+
+.product-visual-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  color: var(--color-navy-600);
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.product-visual-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-navy-500);
+  position: relative;
+  z-index: 1;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 100px;
+  backdrop-filter: blur(8px);
+}
+
+/* System & Features Section */
+.system-section {
+  padding: 120px 0;
+  background: white;
+}
+
+.system-section h2 { text-align: center; margin-bottom: 16px; }
+.system-section .section-description { margin-bottom: 64px; }
+
+.system-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.system-card {
+  padding: 32px;
+  background: var(--color-gray-50);
+  border-radius: 8px;
+  border: 1px solid var(--color-gray-200);
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.system-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-teal-400), var(--color-navy-400));
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.system-card:hover {
+  border-color: var(--color-navy-200);
+  background: white;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
+}
+
+.system-card:hover::before { opacity: 1; }
+
+.system-card-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  font-size: 28px;
+}
+
+.system-card:nth-child(1) .system-card-icon {
+  background: linear-gradient(135deg, var(--color-teal-100), var(--color-teal-50));
+  color: var(--color-teal-700);
+}
+
+.system-card:nth-child(2) .system-card-icon {
+  background: linear-gradient(135deg, var(--color-navy-100), var(--color-navy-50));
+  color: var(--color-navy-700);
+}
+
+.system-card:nth-child(3) .system-card-icon {
+  background: linear-gradient(135deg, var(--color-teal-100), var(--color-teal-50));
+  color: var(--color-teal-700);
+}
+
+.system-card h3 { margin-bottom: 8px; }
+.system-card p { font-size: 14px; line-height: 1.6; margin-bottom: 24px; }
+
+.system-card-features { list-style: none; margin: 0; padding: 0; }
+
+.system-card-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 6px 0;
+  font-size: 14px;
+  color: var(--color-gray-700);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.system-card-features li i {
+  color: var(--color-teal-600);
+  font-size: 18px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* How It Works (Timeline) */
+.hiw-product-section {
+  padding: 120px 0;
+  background: var(--color-navy-900);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.hiw-product-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 70% 30%, rgba(13, 148, 136, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hiw-product-section > * { position: relative; z-index: 1; }
+.hiw-product-section h2 { color: white; text-align: center; margin-bottom: 16px; }
+
+.hiw-product-section .section-description {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 64px;
+}
+
+.hiw-timeline {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.hiw-timeline::before {
+  content: '';
+  position: absolute;
+  left: 32px;
+  top: 0; bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--color-teal-500), var(--color-navy-500), var(--color-teal-500));
+  opacity: 0.3;
+}
+
+.hiw-timeline-step {
+  display: flex;
+  gap: 32px;
+  padding-bottom: 48px;
+  position: relative;
+}
+
+.hiw-timeline-step:last-child { padding-bottom: 0; }
+
+.hiw-timeline-marker {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  position: relative;
+  z-index: 1;
+}
+
+.hiw-timeline-step:nth-child(odd) .hiw-timeline-marker {
+  background: linear-gradient(135deg, rgba(13, 148, 136, 0.2), rgba(13, 148, 136, 0.1));
+  color: var(--color-teal-400);
+  border: 2px solid rgba(13, 148, 136, 0.3);
+}
+
+.hiw-timeline-step:nth-child(even) .hiw-timeline-marker {
+  background: linear-gradient(135deg, rgba(74, 74, 138, 0.3), rgba(74, 74, 138, 0.15));
+  color: var(--color-navy-300);
+  border: 2px solid rgba(74, 74, 138, 0.3);
+}
+
+.hiw-timeline-content { flex: 1; padding-top: 8px; }
+.hiw-timeline-content h4 { color: white; font-size: 20px; margin-bottom: 8px; }
+.hiw-timeline-content p { color: rgba(255, 255, 255, 0.65); font-size: 16px; line-height: 1.6; margin: 0; }
+
+.hiw-timeline-content .step-label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-teal-400);
+  margin-bottom: 4px;
+  display: block;
+}
+
+/* Clinical Evidence */
+.clinical-section {
+  padding: 120px 0;
+  background: white;
+}
+
+.clinical-section h2 { text-align: center; margin-bottom: 16px; }
+.clinical-section .section-description { margin-bottom: 48px; }
+
+.clinical-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.clinical-card {
+  padding: 24px;
+  background: var(--color-gray-50);
+  border-radius: 8px;
+  border: 1px solid var(--color-gray-200);
+  transition: all 0.3s;
+}
+
+.clinical-card:hover {
+  background: white;
+  border-color: var(--color-navy-200);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
+}
+
+.clinical-card-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  background: var(--color-navy-50);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  color: var(--color-navy-600);
+  font-size: 20px;
+}
+
+.clinical-card h4 { margin-bottom: 8px; }
+.clinical-card p { font-size: 14px; line-height: 1.6; margin: 0; }
+
+.clinical-card .stat-source {
+  font-size: 12px;
+  color: var(--color-gray-400);
+  margin: 8px 0 0;
+}
+
+.clinical-card .stat-source a {
+  color: var(--color-gray-400);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
+
+.clinical-note {
+  max-width: 860px;
+  margin: 32px auto 0;
+  padding: 24px;
+  background: var(--color-navy-50);
+  border-radius: 8px;
+  border: 1px solid var(--color-navy-100);
+  text-align: center;
+}
+
+.clinical-note p { margin: 0; color: var(--color-navy-700); font-size: 14px; line-height: 1.6; }
+.clinical-note strong { color: var(--color-navy-800); }
+.clinical-note a { color: var(--color-navy-600); font-weight: 500; }
+
+/* Comparison Table */
+.comparison-section {
+  padding: 120px 0;
+  background: var(--color-gray-50);
+}
+
+.comparison-section h2 { text-align: center; margin-bottom: 16px; }
+.comparison-section .section-description { margin-bottom: 48px; }
+
+.comparison-table-wrapper {
+  max-width: 860px;
+  margin: 0 auto;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--color-gray-200);
+}
+
+.comparison-table { width: 100%; border-collapse: collapse; }
+
+.comparison-table th,
+.comparison-table td {
+  padding: 16px 24px;
+  text-align: left;
+  font-size: 14px;
+  border-bottom: 1px solid var(--color-gray-100);
+}
+
+.comparison-table thead th {
+  background: var(--color-navy-800);
+  color: white;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.comparison-table thead th:first-child { background: var(--color-navy-900); }
+.comparison-table thead th:last-child { background: var(--color-teal-700); }
+.comparison-table tbody tr:hover { background: white; }
+.comparison-table tbody td { color: var(--color-gray-600); }
+.comparison-table tbody td:first-child { font-weight: 500; color: var(--color-gray-900); }
+.comparison-table tbody td:last-child { color: var(--color-navy-800); font-weight: 500; }
+
+.check-icon { color: var(--color-teal-600); font-weight: 700; }
+.cross-icon { color: var(--color-gray-300); }
+
+/* Product CTA Section */
+.product-cta-section {
+  padding: 120px 0;
+  background: linear-gradient(135deg, var(--color-navy-800) 0%, var(--color-navy-600) 100%);
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-cta-section::before {
+  content: '';
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  border-radius: 50%;
+  right: -200px;
+  bottom: -300px;
+  background: radial-gradient(circle, rgba(13, 148, 136, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.product-cta-section > * { position: relative; z-index: 1; }
+
+.product-cta-section h2 {
+  color: white;
+  font-size: 36px;
+  letter-spacing: -0.01em;
+  margin-bottom: 16px;
+}
+
+.product-cta-section p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 18px;
+  max-width: 560px;
+  margin: 0 auto 32px;
+}
+
+.product-cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.product-cta-note {
+  margin-top: 32px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.product-cta-section .eyebrow-teal { color: var(--color-teal-300); }
+.product-cta-note a { color: var(--color-teal-300); text-decoration: underline; }
+
+@media (min-width: 768px) {
+  .product-cta-section h2 { font-size: 48px; }
+}
+
+/* AroBag responsive */
+@media (max-width: 1023px) {
+  .system-grid { grid-template-columns: 1fr; }
+  .clinical-grid { grid-template-columns: 1fr; }
+  .comparison-table-wrapper { overflow-x: auto; }
+}
+
+@media (max-width: 767px) {
+  .product-hero { padding: 120px 0 60px; }
+  .product-hero h1 { font-size: 36px; }
+  .hiw-timeline::before { left: 24px; }
+  .hiw-timeline-marker { width: 48px; height: 48px; font-size: 22px; }
+  .hiw-timeline-step { gap: 16px; }
+}
+
+/* ==========================================================================
+   Post CTA Section (configurable per post)
+   ========================================================================== */
+
+.post-cta-section {
+  padding: 0 0 120px;
+}
+
+.post-cta-card {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px;
+  background: linear-gradient(135deg, var(--color-navy-800) 0%, var(--color-navy-600) 100%);
+  border-radius: 16px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.post-cta-card::before {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  right: -150px;
+  top: -150px;
+  background: radial-gradient(circle, rgba(13, 148, 136, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.post-cta-card > * { position: relative; z-index: 1; }
+
+.post-cta-eyebrow {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--color-teal-300);
+  margin-bottom: 8px;
+}
+
+.post-cta-heading {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 600;
+  color: white;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.post-cta-body {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  max-width: 480px;
+  margin: 0 auto 24px;
+}
+
+.post-cta-button {
+  background: white !important;
+  color: var(--color-navy-800) !important;
+  font-weight: 600;
+}
+
+.post-cta-button:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* ==========================================================================
+   Careers Page Styles
+   ========================================================================== */
+
+.careers-hero {
+  padding-top: 140px;
+  padding-bottom: 64px;
+  background: white;
+}
+
+.careers-hero h1 {
+  color: var(--color-navy-800);
+  max-width: 600px;
+}
+
+.careers-hero-lead {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--color-gray-500);
+  max-width: 560px;
+}
+
+/* Values */
+.careers-values {
+  padding: 0 0 80px;
+  background: white;
+}
+
+.careers-values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.careers-value-card {
+  padding: 32px;
+  background: var(--color-gray-50);
+  border-radius: 12px;
+  border: 1px solid var(--color-gray-200);
+}
+
+.careers-value-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--color-teal-100), var(--color-teal-50));
+  color: var(--color-teal-700);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.careers-value-card h4 { margin-bottom: 8px; }
+.careers-value-card p { font-size: 14px; line-height: 1.6; margin: 0; }
+
+/* Job listings */
+.careers-openings {
+  padding: 80px 0 120px;
+  background: var(--color-gray-50);
+}
+
+.careers-openings h2 {
+  margin-bottom: 8px;
+}
+
+.careers-openings .section-description {
+  text-align: left;
+  margin: 0 0 40px;
+  max-width: none;
+}
+
+.careers-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.career-card {
+  background: white;
+  border: 1px solid var(--color-gray-200);
+  border-radius: 12px;
+  padding: 32px;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.career-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
+}
+
+.career-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 16px;
+}
+
+.career-card-header h3 {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.career-card-meta {
+  font-size: 14px;
+  color: var(--color-gray-400);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.career-meta-sep { color: var(--color-gray-300); }
+
+.career-apply-btn {
+  flex-shrink: 0;
+  font-size: 14px;
+  padding: 8px 20px;
+}
+
+.career-card-description {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-gray-600);
+  margin-bottom: 16px;
+}
+
+.career-card-requirements {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.career-card-requirements li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--color-gray-600);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.career-card-requirements li i {
+  color: var(--color-teal-600);
+  font-size: 16px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.careers-general {
+  margin-top: 40px;
+  padding: 24px 32px;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid var(--color-gray-200);
+  text-align: center;
+}
+
+.careers-general p {
+  margin: 0;
+  font-size: 15px;
+  color: var(--color-gray-600);
+}
+
+.careers-general a {
+  color: var(--color-teal-600);
+  font-weight: 500;
+}
+
+@media (max-width: 1023px) {
+  .careers-values-grid { grid-template-columns: 1fr; }
+  .career-card-requirements { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 767px) {
+  .career-card-header { flex-direction: column; }
+  .career-apply-btn { align-self: flex-start; }
+}
