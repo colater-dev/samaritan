@@ -50,7 +50,7 @@ The economics of AKI prevention are compelling:
 - AKI patients stay an average of 3.5 days longer in the ICU
 - Post-AKI readmission rates within 30 days exceed 25%
 
-For a hospital with 20 ICU beds and typical AKI incidence, even a modest reduction in AKI severity translates to hundreds of thousands of dollars in annual savings. When you add avoided dialysis, reduced mortality litigation risk, and improved quality metrics for payer negotiations, the business case becomes hard to ignore.
+Consider the scale: 300 million surgeries are performed annually worldwide, with up to 25% resulting in ICU admission. Of those ICU patients, 80% are catheterised — creating a vast population at risk of AKI. For a hospital with 20 ICU beds and typical AKI incidence, even a modest reduction in AKI severity translates to hundreds of thousands of dollars in annual savings. When you add avoided dialysis, reduced mortality litigation risk, and improved quality metrics for payer negotiations, the business case becomes hard to ignore.
 
 ## Accessibility as a design principle
 

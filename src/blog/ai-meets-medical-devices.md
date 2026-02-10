@@ -45,7 +45,7 @@ This regulatory complexity is one reason the space remains nascent. It's not eno
 
 ## Why this matters for critical care
 
-ICU patients are the most monitored and least understood patient population in hospitals. They're surrounded by sensors, yet critical conditions like AKI still go undetected until it's too late. The gap isn't in monitoring volume — it's in monitoring intelligence.
+ICU patients are the most monitored and least understood patient population in hospitals. With 300 million surgeries annually, up to 25% leading to ICU admission, and 80% of those patients catheterised, the scale of the unmonitored population is staggering. They're surrounded by sensors, yet critical conditions like AKI still go undetected until it's too late. The gap isn't in monitoring volume — it's in monitoring intelligence.
 
 Closing that gap requires devices that don't just collect more data, but that understand it. Devices that can distinguish between a normal post-operative urine output pattern and the early signature of kidney injury. Devices that alert clinicians not when a threshold is crossed, but when a trajectory suggests a threshold *will* be crossed.
 

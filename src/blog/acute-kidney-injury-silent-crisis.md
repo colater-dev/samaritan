@@ -33,7 +33,7 @@ But the human cost is what drives urgency. Every hour of delayed detection repre
 
 ## Why the ICU is the right place to start
 
-ICU patients represent the highest-risk population for AKI, and — critically — the most monitored. Approximately 25% of ICU patients are catheterised, meaning urine is already being collected continuously. Yet this data stream is barely utilised beyond manual volume measurement.
+ICU patients represent the highest-risk population for AKI, and — critically — the most monitored. Of the 300 million surgeries performed worldwide each year, up to 25% result in ICU admission. Of those ICU patients, approximately 80% are catheterised, meaning urine is already being collected continuously. Yet this data stream is barely utilised beyond manual volume measurement.
 
 The opportunity is clear: transform continuous urine collection from a passive process into an active diagnostic signal. By combining hardware that captures urine biomarkers with AI models trained on ICU patient data, it becomes possible to detect AKI in its earliest stages — when intervention can actually make a difference.
 
