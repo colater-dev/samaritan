@@ -1,0 +1,107 @@
+{
+  "title": "Samaritan Bio",
+  "description": "Building AI-powered biomarker intelligence for the human body, starting with the world's most accessible biofluid.",
+  "url": "https://samaritan.bio",
+  "email": "samaritan.bio@gmail.com",
+  "companyName": "M/S Samaritan AI Private Limited",
+  "location": "Bengaluru, Karnataka, India",
+  "team": {
+    "founders": [
+      {
+        "name": "Raghav Behl",
+        "role": "CEO",
+        "initials": "RB",
+        "linkedin": "https://www.linkedin.com/in/raghav-behl-85486a42/",
+        "bio": "BS ECE, MS AI — Carnegie Mellon University. Software consultant. Ex-Merkle Science, Ex-Inzane Labs.",
+        "type": "founder"
+      },
+      {
+        "name": "Karan Rao",
+        "role": "CTO",
+        "initials": "KR",
+        "linkedin": "https://in.linkedin.com/in/raokaran",
+        "bio": "BS ECE — Carnegie Mellon University. Entrepreneur (Swachh). Technology consultant. Ex-VC.",
+        "type": "founder"
+      }
+    ],
+    "advisors": [
+      {
+        "name": "Dr. Shiv",
+        "role": "Advisor",
+        "initials": "DS",
+        "bio": "Nephrology & Renal Transplant, Metro Hospitals.",
+        "type": "advisor"
+      },
+      {
+        "name": "Dr. Anshul Singh",
+        "role": "Mentor",
+        "initials": "AS",
+        "bio": "Asst. Professor, Dept. of Anesthesiology, AIIMS New Delhi.",
+        "type": "mentor"
+      },
+      {
+        "name": "Dr. Chadha",
+        "role": "Mentor",
+        "initials": "DC",
+        "bio": "Co-Chairperson Urology, Sir Gangaram Hospital.",
+        "type": "mentor"
+      }
+    ]
+  },
+  "founders": [
+    {
+      "name": "Raghav Behl",
+      "role": "CEO",
+      "linkedin": "https://www.linkedin.com/in/raghav-behl-85486a42/",
+      "initials": "RB"
+    },
+    {
+      "name": "Karan Rao",
+      "role": "CTO",
+      "linkedin": "https://in.linkedin.com/in/raokaran",
+      "initials": "KR"
+    }
+  ],
+  "ctas": {
+    "demo": {
+      "eyebrow": "See It In Action",
+      "heading": "Want to see how AroBag works?",
+      "body": "Book a meeting with our team to learn how AroBag can transform kidney monitoring in your ICU.",
+      "buttonText": "Book a Demo",
+      "buttonUrl": "mailto:samaritan.bio@gmail.com?subject=AroBag%20Demo%20Request",
+      "buttonIcon": "ph-calendar-blank"
+    },
+    "pilot": {
+      "eyebrow": "Get Involved",
+      "heading": "Interested in piloting AroBag?",
+      "body": "We're looking for forward-thinking hospitals to join our pilot programme. Register your interest today.",
+      "buttonText": "Register Interest",
+      "buttonUrl": "mailto:samaritan.bio@gmail.com?subject=AroBag%20Pilot%20Interest",
+      "buttonIcon": "ph-envelope-simple"
+    },
+    "investor": {
+      "eyebrow": "For Investors",
+      "heading": "Building the foundational model for the human body",
+      "body": "Samaritan is raising its next round. Get in touch to learn about the opportunity.",
+      "buttonText": "Get in Touch",
+      "buttonUrl": "mailto:samaritan.bio@gmail.com?subject=Investor%20Inquiry",
+      "buttonIcon": "ph-arrow-right"
+    },
+    "careers": {
+      "eyebrow": "Join Us",
+      "heading": "Help build the future of kidney care",
+      "body": "We're hiring engineers, researchers, and operators who want to make a dent in critical care.",
+      "buttonText": "View Open Roles",
+      "buttonUrl": "/careers/",
+      "buttonIcon": "ph-briefcase"
+    },
+    "newsletter": {
+      "eyebrow": "Stay Updated",
+      "heading": "Follow our journey",
+      "body": "Get updates on our clinical trials, product development, and the latest in biomarker science.",
+      "buttonText": "Sign Up for Updates",
+      "buttonUrl": "mailto:samaritan.bio@gmail.com?subject=Newsletter%20Signup",
+      "buttonIcon": "ph-envelope-simple"
+    }
+  }
+}

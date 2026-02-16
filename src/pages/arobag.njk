@@ -1,0 +1,264 @@
+---
+layout: layouts/base.njk
+title: "AroBag — AI-Powered Smart Urine Monitoring for ICU"
+description: "AroBag is a smart urine monitoring bag with AI-powered predictive alerts for Acute Kidney Injury (AKI) and Chronic Kidney Disease (CKD) detection in ICU patients."
+permalink: /arobag/
+---
+
+{% block head %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "AroBag",
+  "description": "A smart urine monitoring bag with AI-powered predictive alerts for Acute Kidney Injury (AKI) and Chronic Kidney Disease (CKD) detection in ICU patients.",
+  "brand": {
+    "@type": "Organization",
+    "name": "Samaritan AI"
+  },
+  "category": "Medical Device",
+  "url": "{{ site.url }}/arobag/"
+}
+</script>
+{% endblock %}
+
+<!-- Product Hero -->
+<section class="product-hero">
+  <div class="container">
+    <div class="product-badge-wrapper reveal">
+      <span class="product-badge">
+        <i class="ph-fill ph-flask" aria-hidden="true"></i>
+        Patent Pending &middot; Pre-Clinical Trials
+      </span>
+    </div>
+    <h1 class="reveal reveal-delay-1">Smart urine monitoring,<br>powered by AI</h1>
+    <p class="product-hero-lead reveal reveal-delay-2">
+      AroBag is the first integrated system combining a smart monitoring bag, AI prediction engine, and hospital EMR integration — designed to detect Acute Kidney Injury hours earlier.
+    </p>
+    <div class="product-hero-ctas reveal reveal-delay-3">
+      <a href="#contact" class="button button-primary">
+        Register Interest for Pilot
+        <i class="ph-fill ph-arrow-right" aria-hidden="true"></i>
+      </a>
+      <a href="#how-it-works" class="button button-secondary">
+        See How It Works
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Product Visual -->
+<section class="product-visual-section">
+  <div class="container">
+    <div class="product-visual-container reveal">
+      <div class="product-visual-icon">
+        <i class="ph-fill ph-drop-half-bottom" aria-hidden="true"></i>
+      </div>
+      <div class="product-visual-label">
+        Product renders coming soon — 3D mockups available on request
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- System Overview -->
+<section class="system-section">
+  <div class="container">
+    <p class="eyebrow">The Complete System</p>
+    <h2 class="reveal">Three components. One integrated solution.</h2>
+    <p class="section-description reveal reveal-delay-1">
+      AroBag is the only product that combines hardware, AI, and software into a single, affordable system for continuous kidney monitoring — at a fraction of the cost of existing solutions.
+    </p>
+    <div class="system-grid">
+      <div class="system-card reveal">
+        <div class="system-card-icon"><i class="ph-fill ph-drop" aria-hidden="true"></i></div>
+        <h3>Smart Monitoring Bag</h3>
+        <p>An intelligently designed urine collection bag that continuously captures output and biomarker data — integrating into existing ICU workflows with zero disruption.</p>
+        <ul class="system-card-features">
+          <li><i class="ph-fill ph-check-circle" aria-hidden="true"></i> Continuous urine output measurement</li>
+          <li><i class="ph-fill ph-check-circle" aria-hidden="true"></i> Specific gravity monitoring</li>
+          <li><i class="ph-fill ph-check-circle" aria-hidden="true"></i> Multiple biomarker capture</li>
+          <li><i class="ph-fill ph-check-circle" aria-hidden="true"></i> Replaces standard bag — zero workflow disruption</li>
+        </ul>
+      </div>
+      <div class="system-card reveal reveal-delay-1">
+        <div class="system-card-icon"><i class="ph-fill ph-brain" aria-hidden="true"></i></div>
+        <h3>AI Prediction Engine</h3>
+        <p>Machine learning models trained on urine biomarker patterns to generate predictive alerts for AKI and CKD — hours before conventional creatinine-based diagnosis.</p>
+        <ul class="system-card-features">
+          <li><i class="ph-fill ph-check-circle" aria-hidden="true"></i> Real-time continuous pattern analysis</li>
+          <li><i class="ph-fill ph-check-circle" aria-hidden="true"></i> AKI risk prediction</li>
+          <li><i class="ph-fill ph-check-circle" aria-hidden="true"></i> CKD progression monitoring</li>
+          <li><i class="ph-fill ph-check-circle" aria-hidden="true"></i> Continuous learning and improvement</li>
+        </ul>
+      </div>
+      <div class="system-card reveal reveal-delay-2">
+        <div class="system-card-icon"><i class="ph-fill ph-device-mobile" aria-hidden="true"></i></div>
+        <h3>Companion App + EMR</h3>
+        <p>A mobile application using computer vision to digitise measurements and integrate seamlessly with hospital Electronic Medical Records — eliminating manual reading errors.</p>
+        <ul class="system-card-features">
+          <li><i class="ph-fill ph-check-circle" aria-hidden="true"></i> Computer vision data capture</li>
+          <li><i class="ph-fill ph-check-circle" aria-hidden="true"></i> Real-time alerts and notifications</li>
+          <li><i class="ph-fill ph-check-circle" aria-hidden="true"></i> EMR system integration</li>
+          <li><i class="ph-fill ph-check-circle" aria-hidden="true"></i> Clinical dashboard and trends</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works (Timeline) -->
+<section class="hiw-product-section" id="how-it-works">
+  <div class="container">
+    <p class="eyebrow eyebrow-teal">How It Works</p>
+    <h2 class="reveal">From collection to clinical action</h2>
+    <p class="section-description reveal reveal-delay-1">
+      AroBag transforms routine urine collection into an intelligent monitoring system in four seamless steps.
+    </p>
+    <div class="hiw-timeline">
+      <div class="hiw-timeline-step reveal">
+        <div class="hiw-timeline-marker"><i class="ph-fill ph-drop-half-bottom" aria-hidden="true"></i></div>
+        <div class="hiw-timeline-content">
+          <span class="step-label">Step 1</span>
+          <h4>Collect &amp; Monitor</h4>
+          <p>AroBag replaces the standard urine collection bag, continuously measuring urine output, specific gravity, and key biomarkers from catheterised ICU patients — with zero workflow disruption.</p>
+        </div>
+      </div>
+      <div class="hiw-timeline-step reveal reveal-delay-1">
+        <div class="hiw-timeline-marker"><i class="ph-fill ph-camera" aria-hidden="true"></i></div>
+        <div class="hiw-timeline-content">
+          <span class="step-label">Step 2</span>
+          <h4>Digitise with Computer Vision</h4>
+          <p>The companion app uses computer vision to digitally capture and transmit measurements — eliminating manual reading errors and automating data entry.</p>
+        </div>
+      </div>
+      <div class="hiw-timeline-step reveal reveal-delay-2">
+        <div class="hiw-timeline-marker"><i class="ph-fill ph-chart-line-up" aria-hidden="true"></i></div>
+        <div class="hiw-timeline-content">
+          <span class="step-label">Step 3</span>
+          <h4>Analyse &amp; Predict</h4>
+          <p>AI models analyse biomarker patterns in real-time, comparing against thousands of data points to detect early signals of AKI and CKD — hours before traditional diagnosis.</p>
+        </div>
+      </div>
+      <div class="hiw-timeline-step reveal reveal-delay-3">
+        <div class="hiw-timeline-marker"><i class="ph-fill ph-bell-ringing" aria-hidden="true"></i></div>
+        <div class="hiw-timeline-content">
+          <span class="step-label">Step 4</span>
+          <h4>Alert &amp; Integrate</h4>
+          <p>Predictive alerts are delivered to clinicians via the companion app and integrated directly into the hospital's EMR system — enabling faster, data-driven intervention.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Clinical Evidence -->
+<section class="clinical-section" id="clinical">
+  <div class="container">
+    <p class="eyebrow">Clinical Context</p>
+    <h2 class="reveal">The science behind early detection</h2>
+    <p class="section-description reveal reveal-delay-1">
+      AI-based AKI prediction is backed by a growing body of clinical research. AroBag builds on this foundation with continuous, real-time biomarker monitoring.
+    </p>
+    <div class="clinical-grid">
+      <div class="clinical-card reveal">
+        <div class="clinical-card-icon"><i class="ph-fill ph-clock-countdown" aria-hidden="true"></i></div>
+        <h4>Hours matter for outcomes</h4>
+        <p>Research consistently demonstrates that earlier detection of AKI — even by just a few hours — dramatically improves patient outcomes and reduces the need for costly interventions like dialysis.</p>
+        <p class="stat-source"><a href="https://kdigo.org/guidelines/acute-kidney-injury/" target="_blank" rel="noopener">KDIGO Guidelines on AKI Management</a></p>
+      </div>
+      <div class="clinical-card reveal reveal-delay-1">
+        <div class="clinical-card-icon"><i class="ph-fill ph-test-tube" aria-hidden="true"></i></div>
+        <h4>Urine biomarkers are increasingly validated</h4>
+        <p>A growing body of research validates urine-based biomarkers (TIMP-2, IGFBP7, NGAL) as early AKI indicators — supporting the scientific basis for continuous urine monitoring.</p>
+        <p class="stat-source"><a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank" rel="noopener">Kashani et al., bioMerieux NephroCheck studies</a></p>
+      </div>
+    </div>
+    <div class="clinical-note reveal reveal-delay-2">
+      <p><strong>Note:</strong> AroBag is currently in pre-clinical trials. Specific performance data and clinical validation results will be published as trials progress. Please <a href="#contact">register your interest</a> to receive updates.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Comparison Table -->
+<section class="comparison-section">
+  <div class="container">
+    <p class="eyebrow">vs. Current Standard of Care</p>
+    <h2 class="reveal">AroBag vs. manual measurement</h2>
+    <p class="section-description reveal reveal-delay-1">
+      See how AroBag compares to the current standard of care in ICU urine monitoring.
+    </p>
+    <div class="comparison-table-wrapper reveal reveal-delay-2">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Manual / Standard</th>
+            <th>AroBag</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Monitoring Type</td>
+            <td>Hourly manual readings</td>
+            <td>Continuous, real-time</td>
+          </tr>
+          <tr>
+            <td>AI Prediction</td>
+            <td><span class="cross-icon">&#x2715;</span> None</td>
+            <td><span class="check-icon">&#x2713;</span> AKI &amp; CKD prediction</td>
+          </tr>
+          <tr>
+            <td>Data Capture</td>
+            <td>Manual entry (error-prone)</td>
+            <td>Computer vision (automated)</td>
+          </tr>
+          <tr>
+            <td>EMR Integration</td>
+            <td><span class="cross-icon">&#x2715;</span> Manual charting</td>
+            <td><span class="check-icon">&#x2713;</span> Direct integration</td>
+          </tr>
+          <tr>
+            <td>Multiple Biomarkers</td>
+            <td>Urine output only</td>
+            <td>Output + specific gravity + biomarkers</td>
+          </tr>
+          <tr>
+            <td>Workflow Disruption</td>
+            <td>Takes nurses away from care</td>
+            <td>Zero — replaces standard bag</td>
+          </tr>
+          <tr>
+            <td>Cost</td>
+            <td>Low (but hidden labour costs)</td>
+            <td>Affordable — fraction of alternatives</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Product CTA Section -->
+<section class="product-cta-section" id="contact">
+  <div class="container">
+    <p class="eyebrow eyebrow-teal">Get Involved</p>
+    <h2 class="reveal">Interested in AroBag?</h2>
+    <p class="reveal reveal-delay-1">
+      AroBag is in pre-clinical trials. Register your interest to receive updates, request a meeting, or learn more about our pilot programme.
+    </p>
+    <div class="product-cta-buttons reveal reveal-delay-2">
+      <a href="mailto:{{ site.email }}?subject=AroBag%20Pilot%20Interest" class="btn-white">
+        <i class="ph-fill ph-envelope-simple" aria-hidden="true"></i>
+        Register Interest
+      </a>
+      <a href="mailto:{{ site.email }}?subject=AroBag%20Meeting%20Request" class="btn-outline-white">
+        <i class="ph-fill ph-calendar-blank" aria-hidden="true"></i>
+        Book a Meeting
+      </a>
+    </div>
+    <p class="product-cta-note reveal reveal-delay-3">
+      For investors, please visit our <a href="/">company page</a> for the broader Samaritan vision.
+    </p>
+  </div>
+</section>

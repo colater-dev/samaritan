@@ -1,4 +1,18 @@
-onboarding/.DS_Store
+# Dependencies
+node_modules/
+
+# Build output
+_site/
+
+# OS files
 .DS_Store
-/node_modules
-/_site
+onboarding/.DS_Store
+
+# Editor
+.vscode/
+*.swp
+*.swo
+
+# Environment
+.env
+.env.local

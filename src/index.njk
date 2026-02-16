@@ -1,0 +1,370 @@
+---
+layout: layouts/base.njk
+title: Building the Foundational Model for the Human Body
+description: Samaritan is building AI-powered biomarker intelligence, starting with the world's most accessible biofluid. AroBag is our first product — a smart urine monitoring system for ICU patients.
+---
+
+{# JSON-LD Structured Data #}
+{% block head %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Samaritan AI",
+  "legalName": "{{ site.companyName }}",
+  "url": "{{ site.url }}",
+  "logo": "{{ site.url }}/assets/samaritan-wide-wordmark.png",
+  "foundingDate": "2019-09-12",
+  "description": "{{ site.description }}",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Bengaluru",
+    "addressRegion": "Karnataka",
+    "addressCountry": "IN"
+  },
+  "founder": [
+    { "@type": "Person", "name": "Karan Rao" },
+    { "@type": "Person", "name": "Raghav Gopal Behl" }
+  ]
+}
+</script>
+
+<noscript>
+  <style>
+    .reveal { opacity: 1; transform: none; }
+    .mobile-nav-overlay, .mobile-nav-drawer { display: none !important; }
+  </style>
+</noscript>
+{% endblock %}
+
+<!-- Hero -->
+<section class="deck-section landing-hero">
+  <div class="container text-center">
+    <h1 class="reveal">The foundational model for the human body</h1>
+    <p class="hero-lead reveal reveal-delay-1">
+      Human bodies are constantly sending out signals.<br>
+      Our AI decodes biomarkers to enable preventative
+      healthcare at a scale never possible before.
+    </p>
+    <form class="hero-form reveal reveal-delay-2">
+      <input type="email" placeholder="you@email.com" required>
+      <button type="submit">Sign up for Updates</button>
+    </form>
+    <a href="/arobag/" class="hero-product-card reveal reveal-delay-2">
+      <img src="/assets/arobag.jpg" alt="AroBag smart urine monitoring device" loading="lazy">
+      <div class="hero-product-card-content">
+        <h3>Introducing AroBag</h3>
+        <p>Our flagship product is a smart urine bag that can detect Acute Kidney Injury hours earlier than traditional methods.</p>
+      </div>
+    </a>
+  </div>
+  <img src="/assets/hero-gradient.svg" alt="" class="hero-gradient" aria-hidden="true">
+</section>
+
+<!-- Patient Funnel Section -->
+<section class="deck-section-short funnel-section">
+  <div class="container">
+    <p class="eyebrow">Where Problems Begin</p>
+    <h2 class="text-center reveal">Surgery &rarr; ICU &rarr; Catheter</h2>
+    <p class="section-description reveal reveal-delay-1">
+      Every year, a massive patient population flows through the same critical path — and kidney injury goes undetected until it's too late.
+    </p>
+    <div class="funnel-grid">
+      <div class="funnel-step reveal">
+        <div class="funnel-icon"><i class="ph-fill ph-heartbeat" aria-hidden="true"></i></div>
+        <div class="funnel-number" data-target="300" data-suffix="M">0M</div>
+        <p class="funnel-label">surgeries performed annually worldwide</p>
+        <div class="funnel-tag">Surgery</div>
+      </div>
+      <div class="funnel-arrow reveal reveal-delay-1">
+        <i class="ph-fill ph-arrow-right" aria-hidden="true"></i>
+      </div>
+      <div class="funnel-step reveal reveal-delay-1">
+        <div class="funnel-icon"><i class="ph-fill ph-bed" aria-hidden="true"></i></div>
+        <div class="funnel-number">Up to 25%</div>
+        <p class="funnel-label">of surgeries result in ICU admission</p>
+        <div class="funnel-tag">ICU</div>
+      </div>
+      <div class="funnel-arrow reveal reveal-delay-2">
+        <i class="ph-fill ph-arrow-right" aria-hidden="true"></i>
+      </div>
+      <div class="funnel-step reveal reveal-delay-2">
+        <div class="funnel-icon"><i class="ph-fill ph-drop" aria-hidden="true"></i></div>
+        <div class="funnel-number" data-target="80" data-suffix="%">0%</div>
+        <p class="funnel-label">of ICU patients are catheterised</p>
+        <div class="funnel-tag">Catheter</div>
+      </div>
+    </div>
+    <div class="funnel-footnote reveal reveal-delay-3">
+      <p>Of these catheterised patients, <strong>20–50% will develop Acute Kidney Injury</strong> — with mortality exceeding 50% in severe cases. Yet there is no continuous monitoring system in place.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Vision Section -->
+<section class="deck-section vision-section">
+  <div class="container">
+    <p class="eyebrow eyebrow-left eyebrow-teal">Our Vision</p>
+    <h2 class="reveal">Urine is the body's most accessible <span class="teal-accent">real-time diagnostic signal</span></h2>
+    <p class="vision-lead reveal reveal-delay-1">
+      Unlike blood draws that require invasive sampling, urine is continuously produced and naturally collected in
+      catheterized patients. It carries a rich constellation of biomarkers — and no one is systematically reading them.
+    </p>
+    <p class="vision-body reveal reveal-delay-2">
+      Samaritan is building AI models that decode this signal in real-time. Our first application is Acute Kidney
+      Injury prediction. Our ambition is far greater — a comprehensive biomarker intelligence platform for the human body.
+    </p>
+  </div>
+</section>
+
+<!-- Problem Section -->
+<section class="deck-section problem-section">
+  <div class="container">
+    <div class="problem-content">
+      <p class="eyebrow eyebrow-left">The Problem</p>
+      <h2 class="reveal">The standard of care hasn't changed in decades</h2>
+      <p class="reveal reveal-delay-1">
+        Today, ICU nurses manually measure urine output every hour — a process that is error-prone,
+        labour-intensive, and provides data far too late to prevent organ damage. By the time AKI is detected
+        through conventional methods, the window for effective intervention has often already closed.
+      </p>
+      <div class="problem-highlight reveal reveal-delay-2">
+        <div class="problem-highlight-item">
+          <h4>Manual Measurement</h4>
+          <p>Hourly readings by hand. Subjective, inconsistent, and takes nurses away from critical care.</p>
+        </div>
+        <div class="problem-highlight-item">
+          <h4>Late Detection</h4>
+          <p>Creatinine-based diagnosis catches AKI hours or days after damage has already begun.</p>
+        </div>
+        <div class="problem-highlight-item">
+          <h4>Preventable Deaths</h4>
+          <p>Earlier detection — even by hours — dramatically improves outcomes and reduces mortality.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Product Intro Section -->
+<section class="deck-section product-intro-section">
+  <div class="container text-center">
+    <p class="eyebrow eyebrow-teal">Introducing AroBag</p>
+    <h2 class="reveal">The complete AI kidney monitoring system</h2>
+    <p class="product-intro-lead reveal reveal-delay-1">
+      Hardware + AI + Software in one integrated solution. AroBag continuously monitors urine biomarkers, runs
+      predictive models, and delivers actionable alerts — all at a fraction of the cost of existing solutions.
+    </p>
+    <div class="product-feature-grid reveal reveal-delay-2">
+      <div class="product-feature-card">
+        <div class="product-feature-icon"><i class="ph-fill ph-drop" aria-hidden="true"></i></div>
+        <h4>Smart Monitoring Bag</h4>
+        <p>Continuous urine output and biomarker monitoring through an intelligently designed collection system.</p>
+      </div>
+      <div class="product-feature-card">
+        <div class="product-feature-icon"><i class="ph-fill ph-brain" aria-hidden="true"></i></div>
+        <h4>AI Prediction Engine</h4>
+        <p>Machine learning models trained to detect early signs of AKI and CKD — hours before conventional diagnosis.</p>
+      </div>
+      <div class="product-feature-card">
+        <div class="product-feature-icon"><i class="ph-fill ph-device-mobile" aria-hidden="true"></i></div>
+        <h4>Companion App + EMR</h4>
+        <p>Computer vision digitises measurements. Data syncs seamlessly with hospital Electronic Medical Records.</p>
+      </div>
+    </div>
+    <div class="product-intro-cta reveal reveal-delay-3">
+      <a href="/arobag/" class="btn-white">
+        Learn More About AroBag
+        <i class="ph-fill ph-arrow-right" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works Section -->
+<section class="deck-section-short how-it-works-section">
+  <div class="container">
+    <p class="eyebrow">How It Works</p>
+    <h2 class="text-center reveal">Three steps to earlier detection</h2>
+    <p class="section-description reveal reveal-delay-1">
+      AroBag transforms the ICU's most overlooked data source into a predictive intelligence system.
+    </p>
+    <div class="hiw-steps">
+      <div class="hiw-step reveal">
+        <div class="hiw-step-number"><i class="ph-fill ph-drop-half-bottom" aria-hidden="true"></i></div>
+        <h4>Monitor</h4>
+        <p>AroBag continuously collects and measures urine output, specific gravity, and key biomarkers from catheterised ICU patients.</p>
+      </div>
+      <div class="hiw-step reveal reveal-delay-1">
+        <div class="hiw-step-number"><i class="ph-fill ph-chart-line-up" aria-hidden="true"></i></div>
+        <h4>Detect</h4>
+        <p>AI models analyse patterns in real-time, identifying the earliest signals of Acute Kidney Injury or Chronic Kidney Disease.</p>
+      </div>
+      <div class="hiw-step reveal reveal-delay-2">
+        <div class="hiw-step-number"><i class="ph-fill ph-bell-ringing" aria-hidden="true"></i></div>
+        <h4>Alert</h4>
+        <p>Clinicians receive actionable, timely alerts through the companion app and hospital EMR — enabling faster intervention.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Market Section -->
+<section class="deck-section market-section">
+  <div class="container">
+    <div class="market-content">
+      <div class="market-text">
+        <p class="eyebrow eyebrow-left">Market Opportunity</p>
+        <h2 class="reveal">A nascent market with no dominant player</h2>
+        <p class="reveal reveal-delay-1">
+          Over $200M has been deployed across competitors in the AKI prediction and urine monitoring space — yet 99%
+          of the market remains uncaptured. No affordable, comprehensive solution exists today.
+        </p>
+        <p class="reveal reveal-delay-2">
+          AroBag is the only solution combining hardware, AI, and EMR integration at a price point accessible to
+          hospitals globally — not just in developed markets.
+        </p>
+      </div>
+      <div class="market-visual">
+        <div class="market-metric reveal">
+          <div class="market-metric-number">$200M+</div>
+          <p class="market-metric-label">Deployed by competitors — yet no one has cracked it</p>
+        </div>
+        <div class="market-metric reveal reveal-delay-1">
+          <div class="market-metric-number">3-in-1</div>
+          <p class="market-metric-label">Only product combining hardware + AI + EMR integration</p>
+        </div>
+        <div class="market-metric reveal reveal-delay-2">
+          <div class="market-metric-number">Global</div>
+          <p class="market-metric-label">Cost position enables access across developed and emerging markets</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Regulatory & Milestones Section -->
+<section class="deck-section-short regulatory-section" id="regulatory">
+  <div class="container">
+    <p class="eyebrow">Regulatory & IP</p>
+    <h2 class="text-center reveal">Built for the path to market</h2>
+    <p class="section-description reveal reveal-delay-1">
+      Samaritan is building on a foundation of intellectual property protection and a clear regulatory strategy.
+    </p>
+    <div class="regulatory-grid">
+      <div class="regulatory-card reveal">
+        <div class="regulatory-card-icon"><i class="ph-fill ph-shield-check" aria-hidden="true"></i></div>
+        <h4>Patent Pending</h4>
+        <p>Core technology and system architecture are protected under patent applications filed in India.</p>
+      </div>
+      <div class="regulatory-card reveal reveal-delay-1">
+        <div class="regulatory-card-icon"><i class="ph-fill ph-certificate" aria-hidden="true"></i></div>
+        <h4>Regulatory Pathway</h4>
+        <p>Targeting CDSCO approval in India, with FDA 510(k) or De Novo pathway planned for the US market.</p>
+      </div>
+      <div class="regulatory-card reveal reveal-delay-2">
+        <div class="regulatory-card-icon"><i class="ph-fill ph-flask" aria-hidden="true"></i></div>
+        <h4>Pre-Clinical Stage</h4>
+        <p>Currently in pre-clinical trials. Clinical validation studies are being designed for the next phase.</p>
+      </div>
+    </div>
+    <div class="milestones-timeline reveal reveal-delay-3">
+      <div class="milestone milestone-completed">
+        <div class="milestone-dot"><i class="ph-fill ph-check" aria-hidden="true"></i></div>
+        <p class="milestone-year">2019</p>
+        <p class="milestone-label">Founded</p>
+      </div>
+      <div class="milestone milestone-completed">
+        <div class="milestone-dot"><i class="ph-fill ph-check" aria-hidden="true"></i></div>
+        <p class="milestone-year">2022</p>
+        <p class="milestone-label">IP Filed</p>
+      </div>
+      <div class="milestone milestone-completed">
+        <div class="milestone-dot"><i class="ph-fill ph-check" aria-hidden="true"></i></div>
+        <p class="milestone-year">2024</p>
+        <p class="milestone-label">Prototype</p>
+      </div>
+      <div class="milestone milestone-current">
+        <div class="milestone-dot"><i class="ph-fill ph-pulse" aria-hidden="true"></i></div>
+        <p class="milestone-year">Now</p>
+        <p class="milestone-label">Pre-Clinical Trials</p>
+      </div>
+      <div class="milestone milestone-upcoming">
+        <div class="milestone-dot"><i class="ph-fill ph-arrow-right" aria-hidden="true"></i></div>
+        <p class="milestone-year">Next</p>
+        <p class="milestone-label">Clinical Trials</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Team Section -->
+<section class="deck-section-short team-section" id="team">
+  <div class="container">
+    <p class="eyebrow">Leadership</p>
+    <h2 class="reveal">Carnegie Mellon engineers. Clinical advisors from India's top hospitals.</h2>
+    <p class="section-description reveal reveal-delay-1">
+      Our team combines deep technical expertise with frontline clinical insight.
+    </p>
+
+    <!-- Founders -->
+    <div class="team-grid">
+      {% for person in site.team.founders %}
+      <div class="team-card reveal{% if loop.index > 1 %} reveal-delay-{{ loop.index0 }}{% endif %}">
+        <div class="team-avatar">{{ person.initials }}</div>
+        <h4>{{ person.name }}</h4>
+        <p class="role">{{ person.role }}</p>
+        <p class="bio">{{ person.bio }}</p>
+        {% if person.linkedin %}
+        <div class="team-social">
+          <a href="{{ person.linkedin }}" target="_blank" rel="noopener">
+            <i class="ph-fill ph-linkedin-logo" aria-hidden="true"></i> LinkedIn
+          </a>
+        </div>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- Advisors & Mentors -->
+    <div class="advisors-section">
+      <h3 class="advisors-heading reveal">Clinical Advisors & Mentors</h3>
+      <div class="advisors-grid">
+        {% for person in site.team.advisors %}
+        <div class="advisor-card reveal{% if loop.index > 1 %} reveal-delay-{{ loop.index0 }}{% endif %}">
+          <div class="advisor-avatar">{{ person.initials }}</div>
+          <div class="advisor-info">
+            <h4>{{ person.name }}</h4>
+            <p class="role">{{ person.role }}</p>
+            <p class="bio">{{ person.bio }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="deck-section cta-section" id="contact">
+  <div class="container">
+    <p class="eyebrow eyebrow-teal">Get in Touch</p>
+    <h2 class="reveal">Let's talk about the future of kidney care</h2>
+    <p class="reveal reveal-delay-1">
+      Whether you're an investor, hospital administrator, or clinician — we'd love to show you what Samaritan is building.
+    </p>
+    <div class="cta-buttons reveal reveal-delay-2">
+      <a href="mailto:{{ site.email }}" class="btn-white">
+        <i class="ph-fill ph-envelope-simple" aria-hidden="true"></i>
+        Book a Meeting
+      </a>
+      <a href="/arobag/" class="btn-outline-white">
+        <i class="ph-fill ph-arrow-right" aria-hidden="true"></i>
+        See AroBag Product Page
+      </a>
+    </div>
+    <p class="cta-hiring reveal reveal-delay-3">
+      We're hiring. If you want to build the future of kidney care, <a href="mailto:{{ site.email }}">reach out</a>.
+    </p>
+  </div>
+</section>

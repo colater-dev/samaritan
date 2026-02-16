@@ -1,0 +1,28 @@
+{
+  "name": "samaritan-bio",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Samaritan Bio — AI-powered biomarker intelligence",
+  "scripts": {
+    "build:css": "npx tailwindcss -i src/css/main.css -o _site/css/main.css --minify",
+    "build:11ty": "npx eleventy",
+    "build": "npm run build:11ty && npm run build:css",
+    "watch:css": "npx tailwindcss -i src/css/main.css -o _site/css/main.css --watch",
+    "watch:11ty": "npx eleventy --serve",
+    "dev": "npm run watch:css & npm run watch:11ty"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://local_proxy@127.0.0.1:16580/git/colater-dev/samaritan"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.2",
+    "@tailwindcss/cli": "^4.1.18",
+    "@tailwindcss/typography": "^0.5.19",
+    "luxon": "^3.7.2",
+    "tailwindcss": "^4.1.18"
+  }
+}

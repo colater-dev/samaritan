@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if title %}{{ title }} — {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{{ description or site.description }}">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="{% if layout == 'layouts/post.njk' %}article{% else %}website{% endif %}">
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:title" content="{{ title or site.title }}">
+  <meta property="og:description" content="{{ description or site.description }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:image" content="{{ site.url }}/assets/samaritan-wide-wordmark.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ title or site.title }}">
+  <meta name="twitter:description" content="{{ description or site.description }}">
+  <meta name="twitter:image" content="{{ site.url }}/assets/samaritan-wide-wordmark.png">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=TASA+Explorer:wght@400;500;600;700&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.0.3/src/fill/style.css">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/main.css">
+
+  {% block head %}{% endblock %}
+</head>
+
+<body>
+  <!-- Skip Link -->
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- Navigation -->
+  <nav class="landing-nav">
+    <a href="/" class="nav-brand">samaritan<span>.bio</span></a>
+    <div class="nav-links">
+      <a href="/"{% if page.url == "/" %} class="active"{% endif %}>Company</a>
+      <a href="/arobag/"{% if page.url == "/arobag/" %} class="active"{% endif %}>AroBag</a>
+      <a href="/blog/"{% if page.url.startsWith("/blog/") %} class="active"{% endif %}>Blog</a>
+      <a href="/#team">Team</a>
+      <a href="/careers/"{% if page.url == "/careers/" %} class="active"{% endif %}>Careers</a>
+      <a href="/#contact">Contact</a>
+    </div>
+    <a href="/#contact" class="nav-cta">Get in Touch</a>
+    <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6" />
+        <line x1="3" y1="12" x2="21" y2="12" />
+        <line x1="3" y1="18" x2="21" y2="18" />
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav-overlay" aria-hidden="true"></div>
+  <div class="mobile-nav-drawer" role="dialog" aria-label="Navigation menu">
+    <button class="mobile-nav-close" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="18" y1="6" x2="6" y2="18" />
+        <line x1="6" y1="6" x2="18" y2="18" />
+      </svg>
+    </button>
+    <div class="mobile-nav-links">
+      <a href="/"{% if page.url == "/" %} class="active"{% endif %}>Company</a>
+      <a href="/arobag/"{% if page.url == "/arobag/" %} class="active"{% endif %}>AroBag</a>
+      <a href="/blog/"{% if page.url.startsWith("/blog/") %} class="active"{% endif %}>Blog</a>
+      <a href="/#team">Team</a>
+      <a href="/careers/"{% if page.url == "/careers/" %} class="active"{% endif %}>Careers</a>
+      <a href="/#contact">Contact</a>
+    </div>
+    <a href="/#contact" class="mobile-nav-cta">Get in Touch</a>
+  </div>
+
+  <!-- Main Content -->
+  <main id="main">
+    {% block content %}{{ content | safe }}{% endblock %}
+  </main>
+
+  <!-- Footer -->
+  <footer class="landing-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="/" class="footer-brand">samaritan<span>.bio</span></a>
+          <p>Building AI-powered biomarker intelligence for the human body. Starting with the world's most accessible biofluid.</p>
+          <p class="footer-legal-address">
+            {{ site.companyName }}<br>
+            {{ site.location }}
+          </p>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/#team">Team</a></li>
+            <li><a href="/#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Product</h4>
+          <ul class="footer-links">
+            <li><a href="/arobag/">AroBag</a></li>
+            <li><a href="/arobag/#how-it-works">How It Works</a></li>
+            <li><a href="/arobag/#clinical">Clinical Evidence</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Connect</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+            {% for founder in site.founders %}
+            <li><a href="{{ founder.linkedin }}" target="_blank" rel="noopener">LinkedIn — {{ founder.name.split(' ')[0] }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      <div class="footer-divider"></div>
+      <div class="footer-bottom-row">
+        <p>&copy; {{ page.date.getFullYear() }} {{ site.companyName }}. All rights reserved.</p>
+        <div class="footer-social">
+          <a href="{{ site.founders[0].linkedin }}" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <i class="ph-fill ph-linkedin-logo" aria-hidden="true"></i>
+          </a>
+          <a href="mailto:{{ site.email }}" aria-label="Email">
+            <i class="ph-fill ph-envelope-simple" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/js/main.js" defer></script>
+  {% block scripts %}{% endblock %}
+</body>
+
+</html>

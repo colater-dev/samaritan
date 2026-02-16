@@ -1,0 +1,61 @@
+---
+layout: layouts/base.njk
+---
+<article class="blog-post">
+  <div class="container">
+    <header class="post-header">
+      <div class="post-meta">
+        <time datetime="{{ date | isoDate }}">{{ date | readableDate }}</time>
+        <span class="post-meta-sep">&middot;</span>
+        <span>{{ content | readingTime }}</span>
+        {% if author %}
+        <span class="post-meta-sep">&middot;</span>
+        <span>{{ author }}</span>
+        {% endif %}
+      </div>
+      <h1 class="post-title">{{ title }}</h1>
+      {% if description %}
+      <p class="post-description">{{ description }}</p>
+      {% endif %}
+      {% if tags %}
+      <div class="post-tags">
+        {% for tag in tags %}
+          {% if tag != "post" %}
+          <span class="tag">{{ tag }}</span>
+          {% endif %}
+        {% endfor %}
+      </div>
+      {% endif %}
+    </header>
+    <div class="prose">
+      {{ content | safe }}
+    </div>
+    <footer class="post-footer">
+      <a href="/blog/" class="back-to-blog">
+        <i class="ph-fill ph-arrow-left" aria-hidden="true"></i>
+        Back to all articles
+      </a>
+    </footer>
+  </div>
+</article>
+
+{# Configurable CTA — set `cta` in post front matter to a key from site.ctas (e.g. cta: demo) #}
+{% set ctaKey = cta or "demo" %}
+{% set ctaData = site.ctas[ctaKey] %}
+{% if ctaData %}
+<section class="post-cta-section">
+  <div class="container">
+    <div class="post-cta-card">
+      {% if ctaData.eyebrow %}
+      <p class="post-cta-eyebrow">{{ ctaData.eyebrow }}</p>
+      {% endif %}
+      <h2 class="post-cta-heading">{{ ctaData.heading }}</h2>
+      <p class="post-cta-body">{{ ctaData.body }}</p>
+      <a href="{{ ctaData.buttonUrl }}" class="button button-primary post-cta-button">
+        <i class="ph-fill {{ ctaData.buttonIcon }}" aria-hidden="true"></i>
+        {{ ctaData.buttonText }}
+      </a>
+    </div>
+  </div>
+</section>
+{% endif %}
