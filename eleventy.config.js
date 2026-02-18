@@ -21,11 +21,11 @@ export default function (eleventyConfig) {
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toISO();
   });
 
-  // Blog collection sorted by date
+  // Blog collection sorted by date (excludes drafts)
   eleventyConfig.addCollection("blog", function (collectionApi) {
-    return collectionApi.getFilteredByGlob("src/blog/*.md").sort((a, b) => {
-      return b.date - a.date;
-    });
+    return collectionApi.getFilteredByGlob("src/blog/*.md")
+      .filter(post => !post.data.draft)
+      .sort((a, b) => b.date - a.date);
   });
 
   // Reading time filter

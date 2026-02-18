@@ -48,20 +48,6 @@
       }
     ]
   },
-  "founders": [
-    {
-      "name": "Raghav Behl",
-      "role": "CEO",
-      "linkedin": "https://www.linkedin.com/in/raghav-behl-85486a42/",
-      "initials": "RB"
-    },
-    {
-      "name": "Karan Rao",
-      "role": "CTO",
-      "linkedin": "https://in.linkedin.com/in/raokaran",
-      "initials": "KR"
-    }
-  ],
   "ctas": {
     "demo": {
       "eyebrow": "See It In Action",

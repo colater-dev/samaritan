@@ -46,10 +46,12 @@ description: Samaritan is building AI-powered biomarker intelligence, starting w
       Our AI decodes biomarkers to enable preventative
       healthcare at a scale never possible before.
     </p>
-    <form class="hero-form reveal reveal-delay-2">
-      <input type="email" placeholder="you@email.com" required>
-      <button type="submit">Sign up for Updates</button>
-    </form>
+    <div class="hero-form reveal reveal-delay-2">
+      <a href="mailto:{{ site.email }}?subject=Newsletter%20Signup" class="btn-white">
+        <i class="ph-fill ph-envelope-simple" aria-hidden="true"></i>
+        Sign up for Updates
+      </a>
+    </div>
     <a href="/arobag/" class="hero-product-card reveal reveal-delay-2">
       <img src="/assets/arobag.jpg" alt="AroBag smart urine monitoring device" loading="lazy">
       <div class="hero-product-card-content">
