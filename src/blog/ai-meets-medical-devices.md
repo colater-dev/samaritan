@@ -7,7 +7,7 @@ tags:
   - AI & Technology
   - Medical Devices
 cta: careers
-draft: true
+draft: false
 ---
 
 The healthcare AI conversation has largely focused on software: diagnostic imaging algorithms, clinical decision support tools, drug discovery platforms. These are important advances. But some of the most impactful applications of AI in medicine will come from a different category entirely — intelligent hardware that generates and interprets clinical data simultaneously.

@@ -6,7 +6,7 @@ author: Samaritan Team
 tags:
   - Clinical Science
   - AKI
-draft: true
+draft: false
 ---
 
 Acute Kidney Injury is one of the most common, most dangerous, and least discussed conditions in critical care. It develops rapidly, often silently, and by the time it's caught, the damage is frequently irreversible.

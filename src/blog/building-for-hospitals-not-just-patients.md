@@ -7,7 +7,7 @@ tags:
   - Strategy
   - Healthcare
 cta: pilot
-draft: true
+draft: false
 ---
 
 In medical device development, there's a common trap: building a product that's clinically brilliant but operationally impractical. A device that produces perfect data but requires a dedicated technician to operate. An algorithm that detects conditions earlier than anything else, but sends alerts through a channel no one monitors.

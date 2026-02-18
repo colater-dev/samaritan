@@ -6,7 +6,7 @@ author: Samaritan Team
 tags:
   - Clinical Science
   - Biomarkers
-draft: true
+draft: false
 ---
 
 Every hour, in intensive care units across the world, nurses manually measure urine output from catheterised patients. They eyeball a graduated collection bag, write down a number, and move on. This ritual — essentially unchanged for decades — represents one of the largest missed opportunities in modern medicine.
